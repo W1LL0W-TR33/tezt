@@ -139,16 +139,16 @@
             transition: all 0.3s;
             cursor: pointer;
         }
-        .price-option:hover { transform: scale(1.02); }
+        .price-option:hover, .topping-option:hover { transform: scale(1.02); }
         .price-option.selected, .product-option.selected {
             background: linear-gradient(135deg, #F4A0A0, #E07070);
             color: white;
             border-color: #E07070;
         }
-        .topping-option:hover { border-color: #F4A0A0; }
         .topping-option.selected {
             background: #FDE8E8;
             border-color: #F4A0A0;
+            box-shadow: 0 0 0 2px #F4A0A0;
         }
         .success-page {
             display: none;
@@ -192,7 +192,6 @@
             </button>
         </div>
 
-        <!-- Mobile Menu -->
         <div id="mobileMenu" class="hidden md:hidden glass mt-2 mx-4 rounded-2xl overflow-hidden">
             <div class="p-6 flex flex-col gap-4">
                 <a href="#home" class="text-chocolate font-medium py-2 border-b border-blush-light/30">Home</a>
@@ -215,19 +214,16 @@
             <div class="absolute bottom-20 right-1/4 w-80 h-80 bg-gold rounded-full blur-3xl"></div>
         </div>
 
-        <div class="absolute top-20 right-20 text-6xl animate-float opacity-60 hidden lg:block">🧁</div>
-        <div class="absolute bottom-40 right-40 text-4xl animate-float opacity-40 hidden lg:block" style="animation-delay: 1s">🍰</div>
-
         <div class="relative z-10 max-w-7xl mx-auto px-6 py-32">
             <div class="max-w-2xl">
-                <p class="font-dancing text-gold-light text-2xl mb-4 fade-in-up" style="animation-delay: 0.2s">Welcome to Sweet Bliss</p>
-                <h1 class="font-playfair text-5xl md:text-7xl font-bold text-cream leading-tight mb-6 fade-in-up" style="animation-delay: 0.4s">
+                <p class="font-dancing text-gold-light text-2xl mb-4 fade-in-up">Welcome to Sweet Bliss</p>
+                <h1 class="font-playfair text-5xl md:text-7xl font-bold text-cream leading-tight mb-6 fade-in-up">
                     Where Every Slice Tells a <span class="text-gradient italic">Sweet Story</span>
                 </h1>
-                <p class="text-cream/80 text-lg md:text-xl leading-relaxed mb-10 max-w-lg fade-in-up" style="animation-delay: 0.6s">
-                    Handcrafted with love, our artisan cakes transform your celebrations into unforgettable moments. Every bite is a masterpiece.
+                <p class="text-cream/80 text-lg md:text-xl leading-relaxed mb-10 max-w-lg fade-in-up">
+                    Handcrafted with love, our artisan cakes transform your celebrations into unforgettable moments.
                 </p>
-                <div class="flex flex-wrap gap-4 fade-in-up" style="animation-delay: 0.8s">
+                <div class="flex flex-wrap gap-4 fade-in-up">
                     <button onclick="openOrderModal()" class="group inline-flex items-center gap-2 bg-blush text-cream px-8 py-4 rounded-full font-medium text-lg hover:bg-blush-dark transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-blush/30">
                         Order Now
                         <span class="group-hover:translate-x-1 transition-transform">→</span>
@@ -235,62 +231,6 @@
                     <a href="#cakes" class="inline-flex items-center gap-2 border-2 border-cream/40 text-cream px-8 py-4 rounded-full font-medium text-lg hover:bg-cream/10 transition-all duration-300 hover:border-cream/80">
                         View Our Cakes
                     </a>
-                </div>
-
-                <div class="mt-16 flex gap-10 fade-in-up" style="animation-delay: 1.2s">
-                    <div>
-                        <p class="font-playfair text-3xl font-bold text-gold-light">500+</p>
-                        <p class="text-cream/60 text-sm mt-1">Happy Clients</p>
-                    </div>
-                    <div>
-                        <p class="font-playfair text-3xl font-bold text-gold-light">50+</p>
-                        <p class="text-cream/60 text-sm mt-1">Cake Varieties</p>
-                    </div>
-                    <div>
-                        <p class="font-playfair text-3xl font-bold text-gold-light">8</p>
-                        <p class="text-cream/60 text-sm mt-1">Years of Joy</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Specialties Section -->
-    <section class="py-24 bg-cream">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <p class="font-dancing text-blush-dark text-xl mb-2">What We Offer</p>
-                <h2 class="font-playfair text-4xl md:text-5xl font-bold text-chocolate mb-4">Our Specialties</h2>
-                <p class="text-warm-gray max-w-2xl mx-auto text-lg">From classic favorites to innovative creations, we offer a full range of baked goods to make every occasion special.</p>
-                <div class="mt-4 w-24 h-1 bg-gradient-to-r from-gold to-blush mx-auto rounded-full"></div>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="group relative">
-                    <div class="relative bg-gradient-to-br from-blush-light to-soft-pink rounded-3xl p-8 h-full overflow-hidden transition-all duration-500 hover:shadow-xl hover:scale-[1.03]">
-                        <div class="absolute top-0 right-0 w-32 h-32 bg-white/20 rounded-full -translate-y-1/2 translate-x-1/2"></div>
-                        <span class="text-5xl mb-4 block group-hover:scale-110 transition-transform duration-300">🎂</span>
-                        <h3 class="font-playfair text-xl font-semibold text-chocolate mb-2">Artisan Flavor Cakes</h3>
-                        <p class="text-warm-gray text-sm leading-relaxed">Infused with premium chocolates, rich vanillas, and real berry compotes.</p>
-                    </div>
-                </div>
-
-                <div class="group relative">
-                    <div class="relative bg-gradient-to-br from-lavender to-purple-100 rounded-3xl p-8 h-full overflow-hidden transition-all duration-500 hover:shadow-xl hover:scale-[1.03]">
-                        <div class="absolute top-0 right-0 w-32 h-32 bg-white/20 rounded-full -translate-y-1/2 translate-x-1/2"></div>
-                        <span class="text-5xl mb-4 block group-hover:scale-110 transition-transform duration-300">🧁</span>
-                        <h3 class="font-playfair text-xl font-semibold text-chocolate mb-2">Cupcake Collections</h3>
-                        <p class="text-warm-gray text-sm leading-relaxed">Perfectly portioned delights in endless flavors for any gathering.</p>
-                    </div>
-                </div>
-
-                <div class="group relative">
-                    <div class="relative bg-gradient-to-br from-gold-light to-yellow-100 rounded-3xl p-8 h-full overflow-hidden transition-all duration-500 hover:shadow-xl hover:scale-[1.03]">
-                        <div class="absolute top-0 right-0 w-32 h-32 bg-white/20 rounded-full -translate-y-1/2 translate-x-1/2"></div>
-                        <span class="text-5xl mb-4 block group-hover:scale-110 transition-transform duration-300">🍰</span>
-                        <h3 class="font-playfair text-xl font-semibold text-chocolate mb-2">Celebration Tiers</h3>
-                        <p class="text-warm-gray text-sm leading-relaxed">Multi-tiered custom flavor cakes designed for birthdays and milestones.</p>
-                    </div>
                 </div>
             </div>
         </div>
@@ -302,382 +242,61 @@
             <div class="text-center mb-16">
                 <p class="font-dancing text-blush-dark text-xl mb-2">Our Signature Collection</p>
                 <h2 class="font-playfair text-4xl md:text-5xl font-bold text-chocolate mb-4">Flavors Handcrafted With Love</h2>
-                <p class="text-warm-gray max-w-2xl mx-auto text-lg">Each cake is baked fresh with distinct flavors, silky fillings, and artistic decor.</p>
+                <p class="text-warm-gray max-w-2xl mx-auto text-lg">Click on any cake to order and select your favorite topping!</p>
                 <div class="mt-6 w-24 h-1 bg-gradient-to-r from-blush to-gold mx-auto rounded-full"></div>
             </div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Flavor 1: Chocolate Fudge -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Belgian Dark Chocolate -->
                 <div class="card-hover group">
                     <div class="bg-white rounded-3xl overflow-hidden shadow-md">
                         <div class="relative overflow-hidden aspect-square">
-                            <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=800&q=80" alt="Belgian Dark Chocolate Cake" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                            <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=800&q=80" alt="Belgian Dark Chocolate Cake" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
                             <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-medium text-chocolate">Chocolate</div>
-                            <div class="absolute bottom-4 right-4 bg-chocolate/90 backdrop-blur-sm text-gold-light px-3 py-1.5 rounded-full text-xs font-medium">Rp 95k - 150k</div>
                         </div>
                         <div class="p-6">
-                            <div class="flex items-center gap-1 mb-2">
-                                <i class="fas fa-star text-gold text-sm"></i>
-                                <i class="fas fa-star text-gold text-sm"></i>
-                                <i class="fas fa-star text-gold text-sm"></i>
-                                <i class="fas fa-star text-gold text-sm"></i>
-                                <i class="fas fa-star text-gold text-sm"></i>
-                            </div>
                             <h3 class="font-playfair text-xl font-semibold text-chocolate mb-2">Belgian Dark Chocolate</h3>
-                            <p class="text-warm-gray text-sm leading-relaxed mb-2">Rich dark chocolate sponge layered with smooth chocolate ganache.</p>
+                            <p class="text-warm-gray text-sm leading-relaxed mb-2">Rich fudge sponge with Belgian chocolate ganache.</p>
                             <p class="text-blush-dark font-bold mb-4">Rp 95.000 - Rp 150.000</p>
-                            <button onclick="openOrderModal('cake', 'Chocolate')" class="w-full bg-soft-pink text-blush-dark py-3 rounded-full text-sm font-medium hover:bg-blush hover:text-white transition-all duration-300">Order Now</button>
+                            <button onclick="openOrderModal('cake', 'Chocolate')" class="w-full bg-soft-pink text-blush-dark py-3 rounded-full text-sm font-medium hover:bg-blush hover:text-white transition-all duration-300">Order Chocolate Cake</button>
                         </div>
                     </div>
                 </div>
 
-                <!-- Flavor 2: Strawberry Cream -->
+                <!-- Strawberry Blossom -->
                 <div class="card-hover group">
                     <div class="bg-white rounded-3xl overflow-hidden shadow-md">
                         <div class="relative overflow-hidden aspect-square">
-                            <img src="https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?w=800&q=80" alt="Strawberry Blossom Cake" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                            <img src="https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?w=800&q=80" alt="Strawberry Blossom Cake" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
                             <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-medium text-chocolate">Strawberry</div>
-                            <div class="absolute bottom-4 right-4 bg-chocolate/90 backdrop-blur-sm text-gold-light px-3 py-1.5 rounded-full text-xs font-medium">Rp 150k - 230k</div>
                         </div>
                         <div class="p-6">
-                            <div class="flex items-center gap-1 mb-2">
-                                <i class="fas fa-star text-gold text-sm"></i>
-                                <i class="fas fa-star text-gold text-sm"></i>
-                                <i class="fas fa-star text-gold text-sm"></i>
-                                <i class="fas fa-star text-gold text-sm"></i>
-                                <i class="fas fa-star text-gold text-sm"></i>
-                            </div>
                             <h3 class="font-playfair text-xl font-semibold text-chocolate mb-2">Strawberry Blossom</h3>
-                            <p class="text-warm-gray text-sm leading-relaxed mb-2">Fluffy sponge filled with homemade strawberry compote and whipped chantilly cream.</p>
+                            <p class="text-warm-gray text-sm leading-relaxed mb-2">Fluffy sponge filled with homemade berry compote.</p>
                             <p class="text-blush-dark font-bold mb-4">Rp 150.000 - Rp 230.000</p>
-                            <button onclick="openOrderModal('cake', 'Strawberry')" class="w-full bg-soft-pink text-blush-dark py-3 rounded-full text-sm font-medium hover:bg-blush hover:text-white transition-all duration-300">Order Now</button>
+                            <button onclick="openOrderModal('cake', 'Strawberry')" class="w-full bg-soft-pink text-blush-dark py-3 rounded-full text-sm font-medium hover:bg-blush hover:text-white transition-all duration-300">Order Strawberry Cake</button>
                         </div>
                     </div>
                 </div>
 
-                <!-- Flavor 3: Red Velvet -->
+                <!-- Signature Red Velvet -->
                 <div class="card-hover group">
                     <div class="bg-white rounded-3xl overflow-hidden shadow-md">
                         <div class="relative overflow-hidden aspect-square">
-                            <img src="https://images.unsplash.com/photo-1586788680434-30d324b2d46f?w=800&q=80" alt="Signature Red Velvet Cake" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                            <img src="https://images.unsplash.com/photo-1586788680434-30d324b2d46f?w=800&q=80" alt="Signature Red Velvet Cake" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
                             <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-medium text-chocolate">Red Velvet</div>
-                            <div class="absolute bottom-4 right-4 bg-chocolate/90 backdrop-blur-sm text-gold-light px-3 py-1.5 rounded-full text-xs font-medium">Rp 200k - 300k</div>
                         </div>
                         <div class="p-6">
-                            <div class="flex items-center gap-1 mb-2">
-                                <i class="fas fa-star text-gold text-sm"></i>
-                                <i class="fas fa-star text-gold text-sm"></i>
-                                <i class="fas fa-star text-gold text-sm"></i>
-                                <i class="fas fa-star text-gold text-sm"></i>
-                                <i class="fas fa-star text-gold text-sm"></i>
-                            </div>
                             <h3 class="font-playfair text-xl font-semibold text-chocolate mb-2">Signature Red Velvet</h3>
-                            <p class="text-warm-gray text-sm leading-relaxed mb-2">Classic cocoa-infused red velvet crumb with whipped cream cheese frosting.</p>
+                            <p class="text-warm-gray text-sm leading-relaxed mb-2">Velvet sponge paired with vanilla cream cheese.</p>
                             <p class="text-blush-dark font-bold mb-4">Rp 200.000 - Rp 300.000</p>
-                            <button onclick="openOrderModal('cake', 'Red Velvet')" class="w-full bg-soft-pink text-blush-dark py-3 rounded-full text-sm font-medium hover:bg-blush hover:text-white transition-all duration-300">Order Now</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Flavor 4: Matcha Fusion -->
-                <div class="card-hover group">
-                    <div class="bg-white rounded-3xl overflow-hidden shadow-md">
-                        <div class="relative overflow-hidden aspect-square">
-                            <img src="https://images.unsplash.com/photo-1535141192574-5d4897c13136?w=800&q=80" alt="Matcha White Chocolate Cake" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
-                            <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-medium text-chocolate">Matcha</div>
-                            <div class="absolute bottom-4 right-4 bg-chocolate/90 backdrop-blur-sm text-gold-light px-3 py-1.5 rounded-full text-xs font-medium">Rp 250k - 380k</div>
-                        </div>
-                        <div class="p-6">
-                            <div class="flex items-center gap-1 mb-2">
-                                <i class="fas fa-star text-gold text-sm"></i>
-                                <i class="fas fa-star text-gold text-sm"></i>
-                                <i class="fas fa-star text-gold text-sm"></i>
-                                <i class="fas fa-star text-gold text-sm"></i>
-                                <i class="fas fa-star text-gold text-sm"></i>
-                            </div>
-                            <h3 class="font-playfair text-xl font-semibold text-chocolate mb-2">Kyoto Matcha Fusion</h3>
-                            <p class="text-warm-gray text-sm leading-relaxed mb-2">Ceremonial Uji matcha cake coupled with silky white chocolate mousse.</p>
-                            <p class="text-blush-dark font-bold mb-4">Rp 250.000 - Rp 380.000</p>
-                            <button onclick="openOrderModal('cake', 'Matcha')" class="w-full bg-soft-pink text-blush-dark py-3 rounded-full text-sm font-medium hover:bg-blush hover:text-white transition-all duration-300">Order Now</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Flavor 5: Madagascar Vanilla Berry -->
-                <div class="card-hover group">
-                    <div class="bg-white rounded-3xl overflow-hidden shadow-md">
-                        <div class="relative overflow-hidden aspect-square">
-                            <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=800&q=80" alt="Madagascar Vanilla Cake" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
-                            <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-medium text-chocolate">Vanilla</div>
-                            <div class="absolute bottom-4 right-4 bg-chocolate/90 backdrop-blur-sm text-gold-light px-3 py-1.5 rounded-full text-xs font-medium">Rp 300k - 450k</div>
-                        </div>
-                        <div class="p-6">
-                            <div class="flex items-center gap-1 mb-2">
-                                <i class="fas fa-star text-gold text-sm"></i>
-                                <i class="fas fa-star text-gold text-sm"></i>
-                                <i class="fas fa-star text-gold text-sm"></i>
-                                <i class="fas fa-star text-gold text-sm"></i>
-                                <i class="fas fa-star text-gold text-sm"></i>
-                            </div>
-                            <h3 class="font-playfair text-xl font-semibold text-chocolate mb-2">Madagascar Vanilla Berry</h3>
-                            <p class="text-warm-gray text-sm leading-relaxed mb-2">Pure bean vanilla bean sponge topped with wild blackberries and gold dust.</p>
-                            <p class="text-blush-dark font-bold mb-4">Rp 300.000 - Rp 450.000</p>
-                            <button onclick="openOrderModal('cake', 'Vanilla')" class="w-full bg-soft-pink text-blush-dark py-3 rounded-full text-sm font-medium hover:bg-blush hover:text-white transition-all duration-300">Order Now</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Cupcake 1 -->
-                <div class="card-hover group">
-                    <div class="bg-white rounded-3xl overflow-hidden shadow-md">
-                        <div class="relative overflow-hidden aspect-square">
-                            <img src="https://images.unsplash.com/photo-1576618148400-f54bed99fcfd?w=800&q=80" alt="Classic vanilla cupcake" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
-                            <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-medium text-chocolate">Cupcake</div>
-                            <div class="absolute bottom-4 right-4 bg-chocolate/90 backdrop-blur-sm text-gold-light px-3 py-1.5 rounded-full text-xs font-medium">Rp 0 - 50k</div>
-                        </div>
-                        <div class="p-6">
-                            <div class="flex items-center gap-1 mb-2">
-                                <i class="fas fa-star text-gold text-sm"></i>
-                                <i class="fas fa-star text-gold text-sm"></i>
-                                <i class="fas fa-star text-gold text-sm"></i>
-                                <i class="fas fa-star text-gold text-sm"></i>
-                                <i class="fas fa-star text-gold text-sm"></i>
-                            </div>
-                            <h3 class="font-playfair text-xl font-semibold text-chocolate mb-2">Classic Vanilla Cupcake</h3>
-                            <p class="text-warm-gray text-sm leading-relaxed mb-2">Fluffy vanilla cupcake topped with vanilla buttercream swirls.</p>
-                            <p class="text-blush-dark font-bold mb-4">Rp 15.000 - Rp 25.000</p>
-                            <button onclick="openOrderModal('cupcake')" class="w-full bg-soft-pink text-blush-dark py-3 rounded-full text-sm font-medium hover:bg-blush hover:text-white transition-all duration-300">Order Now</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Cupcake 2 -->
-                <div class="card-hover group">
-                    <div class="bg-white rounded-3xl overflow-hidden shadow-md">
-                        <div class="relative overflow-hidden aspect-square">
-                            <img src="https://images.unsplash.com/photo-1587668178277-295251f900ce?w=800&q=80" alt="Cupcake box of six" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
-                            <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-medium text-chocolate">Cupcake</div>
-                            <div class="absolute bottom-4 right-4 bg-chocolate/90 backdrop-blur-sm text-gold-light px-3 py-1.5 rounded-full text-xs font-medium">Rp 50k - 100k</div>
-                        </div>
-                        <div class="p-6">
-                            <div class="flex items-center gap-1 mb-2">
-                                <i class="fas fa-star text-gold text-sm"></i>
-                                <i class="fas fa-star text-gold text-sm"></i>
-                                <i class="fas fa-star text-gold text-sm"></i>
-                                <i class="fas fa-star text-gold text-sm"></i>
-                                <i class="fas fa-star text-gold text-sm"></i>
-                            </div>
-                            <h3 class="font-playfair text-xl font-semibold text-chocolate mb-2">Pastel Cupcake Box</h3>
-                            <p class="text-warm-gray text-sm leading-relaxed mb-2">Box of six assorted cupcakes with multi-flavor fillings and pastel swirl.</p>
-                            <p class="text-blush-dark font-bold mb-4">Rp 75.000 - Rp 100.000</p>
-                            <button onclick="openOrderModal('cupcake')" class="w-full bg-soft-pink text-blush-dark py-3 rounded-full text-sm font-medium hover:bg-blush hover:text-white transition-all duration-300">Order Now</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Cupcake 3 -->
-                <div class="card-hover group">
-                    <div class="bg-white rounded-3xl overflow-hidden shadow-md">
-                        <div class="relative overflow-hidden aspect-square">
-                            <img src="https://images.unsplash.com/photo-1614707267537-b85aaf00c4b7?w=800&q=80" alt="Premium cupcake tower" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
-                            <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-medium text-chocolate">Cupcake</div>
-                            <div class="absolute bottom-4 right-4 bg-chocolate/90 backdrop-blur-sm text-gold-light px-3 py-1.5 rounded-full text-xs font-medium">Rp 100k - 250k</div>
-                        </div>
-                        <div class="p-6">
-                            <div class="flex items-center gap-1 mb-2">
-                                <i class="fas fa-star text-gold text-sm"></i>
-                                <i class="fas fa-star text-gold text-sm"></i>
-                                <i class="fas fa-star text-gold text-sm"></i>
-                                <i class="fas fa-star text-gold text-sm"></i>
-                                <i class="fas fa-star text-gold text-sm"></i>
-                            </div>
-                            <h3 class="font-playfair text-xl font-semibold text-chocolate mb-2">Gourmet Cupcake Tower</h3>
-                            <p class="text-warm-gray text-sm leading-relaxed mb-2">A dozen gourmet cupcakes with fresh berries, gold sprinkles, and macarons.</p>
-                            <p class="text-blush-dark font-bold mb-4">Rp 150.000 - Rp 250.000</p>
-                            <button onclick="openOrderModal('cupcake')" class="w-full bg-soft-pink text-blush-dark py-3 rounded-full text-sm font-medium hover:bg-blush hover:text-white transition-all duration-300">Order Now</button>
+                            <button onclick="openOrderModal('cake', 'Red Velvet')" class="w-full bg-soft-pink text-blush-dark py-3 rounded-full text-sm font-medium hover:bg-blush hover:text-white transition-all duration-300">Order Red Velvet</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- About Section -->
-    <section id="about" class="py-24 bg-cream-dark relative overflow-hidden">
-        <div class="absolute top-0 right-0 w-96 h-96 bg-blush-light/30 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
-        <div class="absolute bottom-0 left-0 w-72 h-72 bg-lavender/20 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
-
-        <div class="max-w-7xl mx-auto px-6 relative z-10">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                <div class="relative">
-                    <div class="relative rounded-3xl overflow-hidden shadow-2xl">
-                        <img src="https://images.unsplash.com/photo-1556217477-d325251ece38?w=1200&q=80" alt="Our bakery" class="w-full h-[500px] object-cover">
-                        <div class="absolute inset-0 bg-gradient-to-t from-chocolate/20 to-transparent"></div>
-                    </div>
-                    <div class="absolute -bottom-6 -right-6 bg-white rounded-2xl p-6 shadow-xl max-w-[200px]">
-                        <p class="font-playfair text-4xl font-bold text-blush-dark">8+</p>
-                        <p class="text-warm-gray text-sm mt-1">Years of creating sweet memories</p>
-                    </div>
-                </div>
-
-                <div>
-                    <p class="font-dancing text-blush-dark text-xl mb-2">Our Story</p>
-                    <h2 class="font-playfair text-4xl md:text-5xl font-bold text-chocolate mb-6">Baking Happiness Since 2016</h2>
-                    <p class="text-warm-gray text-lg leading-relaxed mb-6">What started as a small kitchen experiment has blossomed into the city's most beloved artisan bakery. Our founder, Chef Isabella, believed that every celebration deserves a cake that's as unique as the moment itself.</p>
-                    <p class="text-warm-gray text-lg leading-relaxed mb-10">Today, our team of passionate bakers continues that tradition, combining time-honored techniques with creative flavor innovations to craft cakes that don't just taste incredible — they tell your story.</p>
-
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                        <div class="flex gap-4 items-start">
-                            <div class="w-12 h-12 rounded-xl bg-soft-pink flex items-center justify-center flex-shrink-0">
-                                <i class="fas fa-heart text-blush-dark"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold text-chocolate mb-1">Made with Love</h4>
-                                <p class="text-warm-gray text-sm leading-relaxed">Every cake is crafted by hand with passion.</p>
-                            </div>
-                        </div>
-                        <div class="flex gap-4 items-start">
-                            <div class="w-12 h-12 rounded-xl bg-soft-pink flex items-center justify-center flex-shrink-0">
-                                <i class="fas fa-leaf text-blush-dark"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold text-chocolate mb-1">Fresh Ingredients</h4>
-                                <p class="text-warm-gray text-sm leading-relaxed">We source only the finest organic ingredients.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-24 bg-cream-dark relative overflow-hidden">
-        <div class="max-w-7xl mx-auto px-6 relative z-10">
-            <div class="text-center mb-16">
-                <p class="font-dancing text-blush-dark text-xl mb-2">Get In Touch</p>
-                <h2 class="font-playfair text-4xl md:text-5xl font-bold text-chocolate mb-4">Order Your Dream Cake</h2>
-                <p class="text-warm-gray max-w-2xl mx-auto text-lg">Ready to make your celebration unforgettable? Fill out the form below and our team will get back to you within 24 hours.</p>
-                <div class="mt-4 w-24 h-1 bg-gradient-to-r from-blush to-gold mx-auto rounded-full"></div>
-            </div>
-
-            <div class="grid grid-cols-1 lg:grid-cols-5 gap-12">
-                <div class="lg:col-span-2 space-y-6">
-                    <div class="flex items-start gap-4 bg-white rounded-2xl p-5 shadow-sm hover:shadow-md transition-shadow duration-300">
-                        <div class="w-12 h-12 rounded-xl bg-soft-pink flex items-center justify-center flex-shrink-0">
-                            <i class="fas fa-map-marker-alt text-blush-dark"></i>
-                        </div>
-                        <div>
-                            <p class="font-semibold text-chocolate text-sm">Visit Us</p>
-                            <p class="text-warm-gray text-sm mt-1">123 Baker Street, Sweet City, SC 10001</p>
-                        </div>
-                    </div>
-
-                    <div class="flex items-start gap-4 bg-white rounded-2xl p-5 shadow-sm hover:shadow-md transition-shadow duration-300">
-                        <div class="w-12 h-12 rounded-xl bg-soft-pink flex items-center justify-center flex-shrink-0">
-                            <i class="fas fa-phone text-blush-dark"></i>
-                        </div>
-                        <div>
-                            <p class="font-semibold text-chocolate text-sm">Call Us</p>
-                            <p class="text-warm-gray text-sm mt-1">+1 (555) 123-4567</p>
-                        </div>
-                    </div>
-
-                    <div class="flex items-start gap-4 bg-white rounded-2xl p-5 shadow-sm hover:shadow-md transition-shadow duration-300">
-                        <div class="w-12 h-12 rounded-xl bg-soft-pink flex items-center justify-center flex-shrink-0">
-                            <i class="fas fa-envelope text-blush-dark"></i>
-                        </div>
-                        <div>
-                            <p class="font-semibold text-chocolate text-sm">Email Us</p>
-                            <p class="text-warm-gray text-sm mt-1">hello@sweetbliss.com</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="lg:col-span-3">
-                    <form class="bg-white rounded-3xl p-8 md:p-10 shadow-lg">
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                            <div>
-                                <label class="block text-sm font-medium text-chocolate mb-2">Your Name</label>
-                                <input type="text" placeholder="John Doe" class="w-full px-4 py-3 rounded-xl border border-cream-dark bg-cream/50 focus:outline-none focus:border-blush focus:ring-2 focus:ring-blush/20 transition-all duration-300" required>
-                            </div>
-                            <div>
-                                <label class="block text-sm font-medium text-chocolate mb-2">Email Address</label>
-                                <input type="email" placeholder="john@example.com" class="w-full px-4 py-3 rounded-xl border border-cream-dark bg-cream/50 focus:outline-none focus:border-blush focus:ring-2 focus:ring-blush/20 transition-all duration-300" required>
-                            </div>
-                        </div>
-
-                        <div class="mb-6">
-                            <label class="block text-sm font-medium text-chocolate mb-2">Tell Us About Your Dream Cake</label>
-                            <textarea rows="4" placeholder="Describe your preferred flavor, design, or occasion..." class="w-full px-4 py-3 rounded-xl border border-cream-dark bg-cream/50 focus:outline-none focus:border-blush focus:ring-2 focus:ring-blush/20 transition-all duration-300 resize-none"></textarea>
-                        </div>
-
-                        <button type="submit" class="w-full flex items-center justify-center gap-2 bg-chocolate text-cream py-4 rounded-xl font-medium text-lg hover:bg-chocolate-light transition-all duration-300 hover:scale-[1.02] hover:shadow-lg">
-                            <i class="fas fa-paper-plane"></i>
-                            Send Order Request
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-chocolate text-cream/80 py-16">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
-                <div class="md:col-span-1">
-                    <div class="flex items-center gap-2 mb-4">
-                        <span class="text-3xl">🎂</span>
-                        <div>
-                            <h3 class="font-dancing text-2xl font-bold text-cream leading-tight">Sweet Bliss</h3>
-                            <p class="text-[10px] uppercase tracking-[3px] text-cream/50">Artisan Bakery</p>
-                        </div>
-                    </div>
-                    <p class="text-cream/60 text-sm leading-relaxed">Crafting sweet memories since 2016. Every cake tells a story, and we're honored to be part of yours.</p>
-                </div>
-
-                <div>
-                    <h4 class="font-playfair text-cream font-semibold mb-4">Quick Links</h4>
-                    <ul class="space-y-2">
-                        <li><a href="#home" class="text-cream/60 hover:text-blush-light transition-colors duration-300 text-sm">Home</a></li>
-                        <li><a href="#cakes" class="text-cream/60 hover:text-blush-light transition-colors duration-300 text-sm">Our Cakes</a></li>
-                        <li><a href="#about" class="text-cream/60 hover:text-blush-light transition-colors duration-300 text-sm">About Us</a></li>
-                        <li><a href="#contact" class="text-cream/60 hover:text-blush-light transition-colors duration-300 text-sm">Contact</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h4 class="font-playfair text-cream font-semibold mb-4">Our Flavors</h4>
-                    <ul class="space-y-2">
-                        <li><a href="#cakes" class="text-cream/60 hover:text-blush-light transition-colors duration-300 text-sm">Belgian Chocolate</a></li>
-                        <li><a href="#cakes" class="text-cream/60 hover:text-blush-light transition-colors duration-300 text-sm">Strawberry Blossom</a></li>
-                        <li><a href="#cakes" class="text-cream/60 hover:text-blush-light transition-colors duration-300 text-sm">Red Velvet</a></li>
-                        <li><a href="#cakes" class="text-cream/60 hover:text-blush-light transition-colors duration-300 text-sm">Kyoto Matcha</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h4 class="font-playfair text-cream font-semibold mb-4">Stay Sweet</h4>
-                    <p class="text-cream/60 text-sm mb-4">Subscribe for exclusive flavor releases and seasonal offers.</p>
-                    <div class="flex gap-2">
-                        <input type="email" placeholder="Your email" class="flex-1 px-4 py-2.5 rounded-lg bg-cream/10 border border-cream/20 text-cream placeholder:text-cream/40 text-sm focus:outline-none focus:border-blush">
-                        <button class="px-4 py-2.5 bg-blush text-cream rounded-lg text-sm font-medium hover:bg-blush-dark transition-colors">Join</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="border-t border-cream/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
-                <p class="text-cream/40 text-sm">© 2024 Sweet Bliss Bakery. All rights reserved.</p>
-                <p class="text-cream/40 text-sm flex items-center gap-1">Made with <i class="fas fa-heart text-blush"></i> for sweet moments</p>
-                <div class="flex gap-4">
-                    <a href="#" class="text-cream/40 hover:text-blush-light transition-colors duration-300"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="text-cream/40 hover:text-blush-light transition-colors duration-300"><i class="fab fa-facebook"></i></a>
-                    <a href="#" class="text-cream/40 hover:text-blush-light transition-colors duration-300"><i class="fab fa-twitter"></i></a>
-                </div>
-            </div>
-        </div>
-    </footer>
 
     <!-- Order Modal -->
     <div id="orderModal" class="modal">
@@ -690,21 +309,19 @@
             </div>
 
             <form id="orderForm" onsubmit="submitOrder(event)">
-                <!-- Name -->
                 <div class="mb-6">
                     <label class="block text-sm font-medium text-chocolate mb-2">Your Name *</label>
-                    <input type="text" id="customerName" required class="w-full px-4 py-3 rounded-xl border border-cream-dark bg-cream/50 focus:outline-none focus:border-blush focus:ring-2 focus:ring-blush/20 transition-all duration-300" placeholder="Enter your name">
+                    <input type="text" id="customerName" required class="w-full px-4 py-3 rounded-xl border border-cream-dark bg-cream/50 focus:outline-none focus:border-blush" placeholder="Enter your name">
                 </div>
 
-                <!-- Phone -->
                 <div class="mb-6">
                     <label class="block text-sm font-medium text-chocolate mb-2">Phone Number *</label>
-                    <input type="tel" id="customerPhone" required inputmode="numeric" pattern="[0-9+\-\s]*" maxlength="20" oninput="this.value = this.value.replace(/[^0-9+\-\s]/g, '')" class="w-full px-4 py-3 rounded-xl border border-cream-dark bg-cream/50 focus:outline-none focus:border-blush focus:ring-2 focus:ring-blush/20 transition-all duration-300" placeholder="+62 812-3456-7890">
+                    <input type="tel" id="customerPhone" required class="w-full px-4 py-3 rounded-xl border border-cream-dark bg-cream/50 focus:outline-none focus:border-blush" placeholder="+62 812-3456-7890">
                 </div>
 
                 <!-- Product Type -->
                 <div class="mb-6">
-                    <label class="block text-sm font-medium text-chocolate mb-3">What Are You Ordering? *</label>
+                    <label class="block text-sm font-medium text-chocolate mb-3">Item Type *</label>
                     <div class="grid grid-cols-2 gap-3">
                         <label class="product-option border-2 border-cream-dark rounded-xl p-4 text-center">
                             <input type="radio" name="productType" value="Cake" required class="hidden">
@@ -722,96 +339,57 @@
                 <!-- Flavor Selection -->
                 <div class="mb-6">
                     <label class="block text-sm font-medium text-chocolate mb-3">Choose Flavor *</label>
-                    <div class="grid grid-cols-2 gap-3">
-                        <label class="topping-option border-2 border-cream-dark rounded-xl p-4 text-center">
+                    <div class="grid grid-cols-3 gap-3">
+                        <label class="topping-option border-2 border-cream-dark rounded-xl p-3 text-center">
                             <input type="radio" name="flavor" value="Chocolate" required class="hidden">
                             <span class="text-2xl mb-1 block">🍫</span>
-                            <span class="text-sm font-medium">Dark Chocolate</span>
+                            <span class="text-xs font-medium">Chocolate</span>
                         </label>
-                        <label class="topping-option border-2 border-cream-dark rounded-xl p-4 text-center">
+                        <label class="topping-option border-2 border-cream-dark rounded-xl p-3 text-center">
                             <input type="radio" name="flavor" value="Vanilla" class="hidden">
                             <span class="text-2xl mb-1 block">🍦</span>
-                            <span class="text-sm font-medium">Madagascar Vanilla</span>
+                            <span class="text-xs font-medium">Vanilla</span>
                         </label>
-                        <label class="topping-option border-2 border-cream-dark rounded-xl p-4 text-center">
+                        <label class="topping-option border-2 border-cream-dark rounded-xl p-3 text-center">
                             <input type="radio" name="flavor" value="Strawberry" class="hidden">
                             <span class="text-2xl mb-1 block">🍓</span>
-                            <span class="text-sm font-medium">Strawberry Cream</span>
+                            <span class="text-xs font-medium">Strawberry</span>
                         </label>
-                        <label class="topping-option border-2 border-cream-dark rounded-xl p-4 text-center">
+                        <label class="topping-option border-2 border-cream-dark rounded-xl p-3 text-center">
                             <input type="radio" name="flavor" value="Red Velvet" class="hidden">
                             <span class="text-2xl mb-1 block">🎂</span>
-                            <span class="text-sm font-medium">Red Velvet</span>
+                            <span class="text-xs font-medium">Red Velvet</span>
                         </label>
-                        <label class="topping-option border-2 border-cream-dark rounded-xl p-4 text-center">
+                        <label class="topping-option border-2 border-cream-dark rounded-xl p-3 text-center">
                             <input type="radio" name="flavor" value="Matcha" class="hidden">
                             <span class="text-2xl mb-1 block">🍵</span>
-                            <span class="text-sm font-medium">Matcha Fusion</span>
+                            <span class="text-xs font-medium">Matcha</span>
                         </label>
-                        <label class="topping-option border-2 border-cream-dark rounded-xl p-4 text-center">
+                        <label class="topping-option border-2 border-cream-dark rounded-xl p-3 text-center">
                             <input type="radio" name="flavor" value="Cheese" class="hidden">
                             <span class="text-2xl mb-1 block">🧀</span>
-                            <span class="text-sm font-medium">Rich Cheesecake</span>
+                            <span class="text-xs font-medium">Cheesecake</span>
                         </label>
                     </div>
                 </div>
 
-                <!-- Toppings -->
+                <!-- Dynamic Toppings (Radio Buttons: Select One) -->
                 <div class="mb-6">
-                    <label class="block text-sm font-medium text-chocolate mb-3">Choose Toppings (select multiple)</label>
-                    <div class="grid grid-cols-2 gap-3">
-                        <label class="topping-option border-2 border-cream-dark rounded-xl p-3 text-center cursor-pointer">
-                            <input type="checkbox" name="toppings" value="Sprinkles" class="hidden">
-                            <span class="text-xl mb-1 block">✨</span>
-                            <span class="text-xs font-medium">Sprinkles</span>
-                        </label>
-                        <label class="topping-option border-2 border-cream-dark rounded-xl p-3 text-center cursor-pointer">
-                            <input type="checkbox" name="toppings" value="Chocolate Chips" class="hidden">
-                            <span class="text-xl mb-1 block">🍫</span>
-                            <span class="text-xs font-medium">Choco Chips</span>
-                        </label>
-                        <label class="topping-option border-2 border-cream-dark rounded-xl p-3 text-center cursor-pointer">
-                            <input type="checkbox" name="toppings" value="Fresh Fruits" class="hidden">
-                            <span class="text-xl mb-1 block">🍓</span>
-                            <span class="text-xs font-medium">Fresh Berries</span>
-                        </label>
-                        <label class="topping-option border-2 border-cream-dark rounded-xl p-3 text-center cursor-pointer">
-                            <input type="checkbox" name="toppings" value="Edible Flowers" class="hidden">
-                            <span class="text-xl mb-1 block">🌸</span>
-                            <span class="text-xs font-medium">Flowers</span>
-                        </label>
-                        <label class="topping-option border-2 border-cream-dark rounded-xl p-3 text-center cursor-pointer">
-                            <input type="checkbox" name="toppings" value="Gold Leaf" class="hidden">
-                            <span class="text-xl mb-1 block">✨</span>
-                            <span class="text-xs font-medium">Gold Leaf</span>
-                        </label>
-                        <label class="topping-option border-2 border-cream-dark rounded-xl p-3 text-center cursor-pointer">
-                            <input type="checkbox" name="toppings" value="Macarons" class="hidden">
-                            <span class="text-xl mb-1 block">🧁</span>
-                            <span class="text-xs font-medium">Macarons</span>
-                        </label>
+                    <div class="flex justify-between items-center mb-3">
+                        <label class="block text-sm font-medium text-chocolate">Choose Your Topping (Pick One) *</label>
+                        <span id="flavorNotice" class="text-xs text-blush-dark font-medium">Showing Chocolate Pairings</span>
                     </div>
+                    
+                    <!-- Container dynamically populated by JavaScript -->
+                    <div id="toppingsList" class="grid grid-cols-2 sm:grid-cols-3 gap-3"></div>
                 </div>
 
-                <!-- Price Range -->
+                <!-- Budget Range -->
                 <div class="mb-8">
-                    <label class="block text-sm font-medium text-chocolate mb-3">Size &amp; Flavor Tier *</label>
+                    <label class="block text-sm font-medium text-chocolate mb-3">Size &amp; Price Range *</label>
                     <div id="priceRangeList" class="space-y-3"></div>
-
-                    <!-- Product preview matching selected budget -->
-                    <div id="cakePreviewWrap" class="mt-4 hidden">
-                        <p class="text-xs text-warm-gray mb-2">Flavor Preview</p>
-                        <img id="cakePreviewImg" src="" alt="Product preview" class="w-full h-48 object-cover rounded-xl border border-cream-dark scale-in">
-                    </div>
                 </div>
 
-                <!-- Special Request -->
-                <div class="mb-8">
-                    <label class="block text-sm font-medium text-chocolate mb-2">Special Request (Optional)</label>
-                    <textarea id="specialRequest" rows="3" class="w-full px-4 py-3 rounded-xl border border-cream-dark bg-cream/50 focus:outline-none focus:border-blush focus:ring-2 focus:ring-blush/20 transition-all duration-300 resize-none" placeholder="Allergies, custom inscription, or styling notes..."></textarea>
-                </div>
-
-                <!-- Submit Button -->
                 <button type="submit" class="w-full flex items-center justify-center gap-2 bg-blush text-cream py-4 rounded-xl font-medium text-lg hover:bg-blush-dark transition-all duration-300 hover:scale-[1.02] hover:shadow-lg">
                     <i class="fas fa-shopping-cart"></i>
                     Place Order
@@ -823,133 +401,111 @@
     <!-- Success Page -->
     <div id="successPage" class="success-page">
         <div class="min-h-screen flex items-center justify-center p-6">
-            <div class="max-w-2xl w-full text-center">
-                <div class="mb-8">
-                    <div class="inline-flex items-center justify-center w-32 h-32 bg-gradient-to-br from-blush to-blush-dark rounded-full mb-6">
-                        <i class="fas fa-check text-cream text-6xl"></i>
-                    </div>
-                    <h1 class="font-playfair text-5xl md:text-6xl font-bold text-chocolate mb-4">Order Successful!</h1>
-                    <p class="text-warm-gray text-xl mb-2">Thank you for your order</p>
-                    <p class="text-warm-gray text-lg" id="orderNumber">Order #SB-000000</p>
+            <div class="max-w-xl w-full text-center bg-white rounded-3xl p-8 shadow-lg">
+                <div class="inline-flex items-center justify-center w-20 h-20 bg-blush text-white rounded-full mb-4">
+                    <i class="fas fa-check text-3xl"></i>
+                </div>
+                <h1 class="font-playfair text-3xl font-bold text-chocolate mb-2">Order Confirmed!</h1>
+                <p class="text-warm-gray mb-6" id="orderNumber">Order #SB-000000</p>
+
+                <div class="border-t border-b border-cream-dark py-4 text-left space-y-3 mb-6 text-sm">
+                    <div class="flex justify-between"><span>Customer:</span> <strong id="summaryName">-</strong></div>
+                    <div class="flex justify-between"><span>Flavor:</span> <strong id="summaryFlavor">-</strong></div>
+                    <div class="flex justify-between"><span>Chosen Topping:</span> <strong id="summaryTopping" class="text-blush-dark">-</strong></div>
+                    <div class="flex justify-between"><span>Total:</span> <strong id="summaryTotal" class="text-chocolate font-bold">-</strong></div>
                 </div>
 
-                <div class="bg-white rounded-3xl p-8 shadow-lg mb-8 text-left">
-                    <h3 class="font-playfair text-2xl font-bold text-chocolate mb-6">Order Summary</h3>
-                    <div class="space-y-4">
-                        <div class="flex justify-between items-center pb-4 border-b border-cream-dark">
-                            <span class="text-warm-gray">Customer</span>
-                            <span class="font-medium text-chocolate" id="summaryName">-</span>
-                        </div>
-                        <div class="flex justify-between items-center pb-4 border-b border-cream-dark">
-                            <span class="text-warm-gray">Product</span>
-                            <span class="font-medium text-chocolate" id="summaryProduct">-</span>
-                        </div>
-                        <div class="flex justify-between items-center pb-4 border-b border-cream-dark">
-                            <span class="text-warm-gray">Flavor</span>
-                            <span class="font-medium text-chocolate" id="summaryFlavor">-</span>
-                        </div>
-                        <div class="flex justify-between items-center pb-4 border-b border-cream-dark">
-                            <span class="text-warm-gray">Toppings</span>
-                            <span class="font-medium text-chocolate text-right" id="summaryToppings">-</span>
-                        </div>
-                        <div class="flex justify-between items-center pb-4 border-b border-cream-dark">
-                            <span class="text-warm-gray">Price Range</span>
-                            <span class="font-medium text-chocolate" id="summaryPrice">-</span>
-                        </div>
-                        <div class="flex justify-between items-center pt-4">
-                            <span class="font-bold text-chocolate text-lg">Total</span>
-                            <span class="font-bold text-blush-dark text-2xl" id="summaryTotal">-</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bg-soft-pink rounded-2xl p-6 mb-8">
-                    <p class="text-chocolate">
-                        <i class="fas fa-info-circle text-blush-dark mr-2"></i>
-                        We'll contact you shortly to confirm your order and arrange delivery.
-                    </p>
-                </div>
-
-                <button onclick="closeSuccessPage()" class="inline-flex items-center gap-2 bg-chocolate text-cream px-8 py-4 rounded-full font-medium text-lg hover:bg-chocolate-light transition-all duration-300 hover:scale-105">
-                    <i class="fas fa-home"></i>
-                    Back to Home
-                </button>
+                <button onclick="closeSuccessPage()" class="bg-chocolate text-cream px-8 py-3 rounded-full font-medium">Back to Home</button>
             </div>
         </div>
     </div>
 
     <script>
-        // Navbar scroll effect
-        window.addEventListener('scroll', function() {
-            const navbar = document.getElementById('navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('nav-scrolled', 'shadow-lg', 'py-3');
-                navbar.classList.remove('bg-transparent', 'py-5');
-            } else {
-                navbar.classList.remove('nav-scrolled', 'shadow-lg', 'py-3');
-                navbar.classList.add('bg-transparent', 'py-5');
-            }
-        });
-
-        // Mobile menu toggle
-        document.getElementById('mobileMenuBtn').addEventListener('click', function() {
-            const menu = document.getElementById('mobileMenu');
-            menu.classList.toggle('hidden');
-        });
-
-        document.querySelectorAll('#mobileMenu a').forEach(link => {
-            link.addEventListener('click', () => {
-                document.getElementById('mobileMenu').classList.add('hidden');
-            });
-        });
-
-        // Dynamic Flavor & Budget tiers
-        const PRICE_TIERS = {
-            cake: [
-                { value: '95-150', label: 'Rp 95.000 - Rp 150.000', tier: 'Belgian Chocolate (Small)', img: 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=600&q=80' },
-                { value: '150-230', label: 'Rp 150.000 - Rp 230.000', tier: 'Strawberry Blossom (Medium)', img: 'https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?w=600&q=80' },
-                { value: '200-300', label: 'Rp 200.000 - Rp 300.000', tier: 'Signature Red Velvet (Standard)', img: 'https://images.unsplash.com/photo-1586788680434-30d324b2d46f?w=600&q=80' },
-                { value: '250-380', label: 'Rp 250.000 - Rp 380.000', tier: 'Kyoto Matcha Fusion (Large)', img: 'https://images.unsplash.com/photo-1535141192574-5d4897c13136?w=600&q=80' },
-                { value: '300-450', label: 'Rp 300.000 - Rp 450.000', tier: 'Vanilla Berry Celebration (2-Tier)', img: 'https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=600&q=80' },
+        // Specific topping pairings per flavor
+        const TOPPINGS_DATA = {
+            'Chocolate': [
+                { name: 'Chocolate Chips', icon: '🍫', desc: 'Double rich cocoa' },
+                { name: 'Fresh Fruit', icon: '🍓', desc: 'Strawberries & berries' },
+                { name: 'Sprinkles', icon: '✨', desc: 'Rainbow crispy crunch' },
+                { name: 'Gold Leaf', icon: '🌟', desc: '24k edible luxury' },
+                { name: 'Edible Flowers', icon: '🌸', desc: 'Organic petals' },
+                { name: 'Macarons', icon: '🧁', desc: 'French chocolate shells' }
             ],
-            cupcake: [
-                { value: '15-25', label: 'Rp 15.000 - Rp 25.000', tier: 'Single Cupcake', img: 'https://images.unsplash.com/photo-1576618148400-f54bed99fcfd?w=600&q=80' },
-                { value: '75-100', label: 'Rp 75.000 - Rp 100.000', tier: 'Box of 6 Pastel Flavors', img: 'https://images.unsplash.com/photo-1587668178277-295251f900ce?w=600&q=80' },
-                { value: '150-250', label: 'Rp 150.000 - Rp 250.000', tier: 'Gourmet Dozen Assorted', img: 'https://images.unsplash.com/photo-1614707267537-b85aaf00c4b7?w=600&q=80' },
+            'Default': [
+                { name: 'Rainbow Sprinkles', icon: '✨', desc: 'Sweet & crunchy' },
+                { name: 'Fresh Berries', icon: '🍓', desc: 'Seasonal strawberries' },
+                { name: 'Chocolate Chips', icon: '🍫', desc: 'Dark milk drops' },
+                { name: 'Edible Flowers', icon: '🌸', desc: 'Delicate floral garnish' },
+                { name: 'Gold Leaf', icon: '🌟', desc: 'Elegant finish' },
+                { name: 'Pastel Macarons', icon: '🧁', desc: 'Crisp meringue' }
             ]
         };
 
-        function renderPriceOptions(productType) {
-            const list = document.getElementById('priceRangeList');
-            const tiers = PRICE_TIERS[productType] || PRICE_TIERS.cake;
-            list.innerHTML = tiers.map((t, i) => `
-                <label class="price-option border-2 border-cream-dark rounded-xl p-4 flex items-center justify-between" data-cake-img="${t.img}">
-                    <input type="radio" name="priceRange" value="${t.value}" ${i === 0 ? 'required' : ''} class="hidden">
-                    <span class="font-medium">${t.label}</span>
-                    <span class="text-sm text-warm-gray">${t.tier}</span>
+        const PRICE_TIERS = {
+            cake: [
+                { value: '95-150', label: 'Rp 95.000 - Rp 150.000', tier: 'Small (15cm)' },
+                { value: '150-230', label: 'Rp 150.000 - Rp 230.000', tier: 'Medium (20cm)' },
+                { value: '200-300', label: 'Rp 200.000 - Rp 300.000', tier: 'Large (25cm)' }
+            ],
+            cupcake: [
+                { value: '15-25', label: 'Rp 15.000 - Rp 25.000', tier: 'Single Piece' },
+                { value: '75-100', label: 'Rp 75.000 - Rp 100.000', tier: 'Box of 6' }
+            ]
+        };
+
+        function renderToppings(flavor) {
+            const list = document.getElementById('toppingsList');
+            const notice = document.getElementById('flavorNotice');
+            const items = TOPPINGS_DATA[flavor] || TOPPINGS_DATA['Default'];
+
+            notice.textContent = `${flavor} Recommended Toppings`;
+
+            list.innerHTML = items.map((top, idx) => `
+                <label class="topping-option border-2 border-cream-dark rounded-xl p-3 text-center flex flex-col items-center justify-center">
+                    <input type="radio" name="topping" value="${top.name}" ${idx === 0 ? 'checked' : ''} class="hidden" required>
+                    <span class="text-xl mb-1">${top.icon}</span>
+                    <span class="text-xs font-semibold text-chocolate">${top.name}</span>
                 </label>
             `).join('');
-            document.getElementById('cakePreviewWrap').classList.add('hidden');
-            document.getElementById('cakePreviewImg').src = '';
+
+            // Highlight pre-selected default
+            const firstOption = list.querySelector('.topping-option');
+            if (firstOption) firstOption.classList.add('selected');
         }
 
-        // Order Modal Functions
-        function openOrderModal(productType = 'cake', flavor = null) {
-            renderPriceOptions(productType === 'cupcake' ? 'cupcake' : 'cake');
-            
-            const targetType = productType === 'cupcake' ? 'Cupcake' : 'Cake';
-            const typeRadio = document.querySelector(`input[name="productType"][value="${targetType}"]`);
+        function renderPriceOptions(type) {
+            const list = document.getElementById('priceRangeList');
+            const tiers = PRICE_TIERS[type] || PRICE_TIERS.cake;
+            list.innerHTML = tiers.map((t, i) => `
+                <label class="price-option border-2 border-cream-dark rounded-xl p-4 flex items-center justify-between">
+                    <input type="radio" name="priceRange" value="${t.value}" ${i === 0 ? 'checked' : ''} class="hidden" required>
+                    <span class="font-medium text-sm">${t.label}</span>
+                    <span class="text-xs text-warm-gray">${t.tier}</span>
+                </label>
+            `).join('');
+
+            const firstOption = list.querySelector('.price-option');
+            if (firstOption) firstOption.classList.add('selected');
+        }
+
+        function openOrderModal(type = 'cake', flavor = 'Chocolate') {
+            renderPriceOptions(type);
+            renderToppings(flavor);
+
+            // Select matching product type radio
+            const typeRadio = document.querySelector(`input[name="productType"][value="${type === 'cupcake' ? 'Cupcake' : 'Cake'}"]`);
             if (typeRadio) {
                 typeRadio.checked = true;
-                typeRadio.dispatchEvent(new Event('change', { bubbles: true }));
+                document.querySelectorAll('.product-option').forEach(el => el.classList.remove('selected'));
+                typeRadio.closest('.product-option').classList.add('selected');
             }
 
-            if (flavor) {
-                const flavorRadio = document.querySelector(`input[name="flavor"][value="${flavor}"]`);
-                if (flavorRadio) {
-                    flavorRadio.checked = true;
-                    flavorRadio.dispatchEvent(new Event('change', { bubbles: true }));
-                }
+            // Select matching flavor radio
+            const flavorRadio = document.querySelector(`input[name="flavor"][value="${flavor}"]`);
+            if (flavorRadio) {
+                flavorRadio.checked = true;
+                document.querySelectorAll('input[name="flavor"]').forEach(r => r.closest('.topping-option').classList.remove('selected'));
+                flavorRadio.closest('.topping-option').classList.add('selected');
             }
 
             document.getElementById('orderModal').classList.add('active');
@@ -959,85 +515,64 @@
         function closeOrderModal() {
             document.getElementById('orderModal').classList.remove('active');
             document.body.style.overflow = 'auto';
-            document.getElementById('orderForm').reset();
-            document.querySelectorAll('.price-option, .topping-option, .product-option').forEach(el => el.classList.remove('selected'));
-            document.getElementById('cakePreviewWrap').classList.add('hidden');
         }
 
-        // Product type switcher
-        document.querySelectorAll('input[name="productType"]').forEach(radio => {
-            radio.addEventListener('change', function() {
-                renderPriceOptions(this.value === 'Cupcake' ? 'cupcake' : 'cake');
-            });
-        });
-
-        // Form event listener for UI selections
+        // Handle dynamically updated UI changes (Event Delegation)
         document.getElementById('orderForm').addEventListener('change', function(e) {
             const input = e.target;
 
-            if (input.matches('input[name="priceRange"]')) {
+            if (input.name === 'flavor') {
+                document.querySelectorAll('input[name="flavor"]').forEach(r => r.closest('.topping-option').classList.remove('selected'));
+                input.closest('.topping-option').classList.add('selected');
+                
+                // Re-render toppings specifically tailored to the clicked flavor
+                renderToppings(input.value);
+            } 
+            else if (input.name === 'topping') {
+                document.querySelectorAll('input[name="topping"]').forEach(r => r.closest('.topping-option').classList.remove('selected'));
+                input.closest('.topping-option').classList.add('selected');
+            } 
+            else if (input.name === 'productType') {
+                document.querySelectorAll('.product-option').forEach(el => el.classList.remove('selected'));
+                input.closest('.product-option').classList.add('selected');
+                renderPriceOptions(input.value.toLowerCase());
+            } 
+            else if (input.name === 'priceRange') {
                 document.querySelectorAll('.price-option').forEach(el => el.classList.remove('selected'));
-                const option = input.closest('.price-option');
-                option.classList.add('selected');
-
-                const imgUrl = option.getAttribute('data-cake-img');
-                const wrap = document.getElementById('cakePreviewWrap');
-                const img = document.getElementById('cakePreviewImg');
-                if (imgUrl && wrap && img) {
-                    img.src = imgUrl;
-                    wrap.classList.remove('hidden');
-                }
-            } else if (input.matches('input[name="toppings"]')) {
-                input.closest('.topping-option').classList.toggle('selected', input.checked);
-            } else if (input.matches('input[name="flavor"]')) {
-                document.querySelectorAll('input[name="flavor"]').forEach(r => {
-                    r.closest('.topping-option').classList.toggle('selected', r.checked);
-                });
-            } else if (input.matches('input[name="productType"]')) {
-                document.querySelectorAll('input[name="productType"]').forEach(r => {
-                    r.closest('.product-option').classList.toggle('selected', r.checked);
-                });
+                input.closest('.price-option').classList.add('selected');
             }
         });
 
-        // Submit Order
         function submitOrder(event) {
             event.preventDefault();
 
             const name = document.getElementById('customerName').value;
-            const productType = document.querySelector('input[name="productType"]:checked').value;
             const flavor = document.querySelector('input[name="flavor"]:checked').value;
-            const toppings = Array.from(document.querySelectorAll('input[name="toppings"]:checked')).map(cb => cb.value);
+            const topping = document.querySelector('input[name="topping"]:checked').value;
             const priceRange = document.querySelector('input[name="priceRange"]:checked').value;
 
-            const orderNum = 'SB-' + Math.floor(100000 + Math.random() * 900000);
             const [min, max] = priceRange.split('-').map(Number);
             const total = ((min + max) / 2) * 1000;
 
-            document.getElementById('orderNumber').textContent = 'Order #' + orderNum;
+            document.getElementById('orderNumber').textContent = 'Order #SB-' + Math.floor(100000 + Math.random() * 900000);
             document.getElementById('summaryName').textContent = name;
-            document.getElementById('summaryProduct').textContent = productType;
             document.getElementById('summaryFlavor').textContent = flavor;
-            document.getElementById('summaryToppings').textContent = toppings.length > 0 ? toppings.join(', ') : 'None';
-            document.getElementById('summaryPrice').textContent = 'Rp ' + (min * 1000).toLocaleString('id-ID') + ' - Rp ' + (max * 1000).toLocaleString('id-ID');
+            document.getElementById('summaryTopping').textContent = topping;
             document.getElementById('summaryTotal').textContent = 'Rp ' + total.toLocaleString('id-ID');
 
             closeOrderModal();
             document.getElementById('successPage').classList.add('active');
-            document.body.style.overflow = 'hidden';
 
             confetti({
-                particleCount: 150,
+                particleCount: 120,
                 spread: 70,
-                origin: { y: 0.6 },
-                colors: ['#F4A0A0', '#C8A951', '#E8D5F5', '#FDDCDC']
+                origin: { y: 0.6 }
             });
         }
 
         function closeSuccessPage() {
             document.getElementById('successPage').classList.remove('active');
             document.body.style.overflow = 'auto';
-            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
         document.getElementById('orderModal').addEventListener('click', function(e) {
