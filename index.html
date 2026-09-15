@@ -39,111 +39,63 @@
         }
     </script>
     <style>
-        html {
-            scroll-behavior: smooth;
-        }
-
+        html { scroll-behavior: smooth; }
         body {
             font-family: 'Lato', sans-serif;
             background-color: #FFF8F0;
             color: #3D2314;
             overflow-x: hidden;
         }
-
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: #FFF8F0;
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: #F4A0A0;
-            border-radius: 4px;
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: #E07070;
-        }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #FFF8F0; }
+        ::-webkit-scrollbar-thumb { background: #F4A0A0; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #E07070; }
 
         @keyframes float {
             0%, 100% { transform: translateY(0px); }
             50% { transform: translateY(-10px); }
         }
-
         @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
         }
-
         @keyframes scaleIn {
-            from {
-                opacity: 0;
-                transform: scale(0.9);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
         }
 
-        .animate-float {
-            animation: float 3s ease-in-out infinite;
-        }
-
-        .fade-in-up {
-            animation: fadeInUp 0.8s ease-out forwards;
-        }
-
-        .scale-in {
-            animation: scaleIn 0.5s ease-out forwards;
-        }
-
+        .animate-float { animation: float 3s ease-in-out infinite; }
+        .fade-in-up { animation: fadeInUp 0.8s ease-out forwards; }
+        .scale-in { animation: scaleIn 0.5s ease-out forwards; }
         .glass {
             background: rgba(255, 255, 255, 0.7);
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.3);
         }
-
         .nav-scrolled {
             background: rgba(61, 35, 20, 0.92);
             backdrop-filter: blur(10px);
         }
-
         .text-gradient {
             background: linear-gradient(135deg, #E07070, #C8A951);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-
         .card-hover {
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
-
         .card-hover:hover {
             transform: translateY(-8px) scale(1.02);
             box-shadow: 0 20px 60px rgba(61, 35, 20, 0.15);
         }
-
         .bg-pattern {
             background-image:
                 radial-gradient(circle at 20% 50%, rgba(244, 160, 160, 0.1) 0%, transparent 50%),
                 radial-gradient(circle at 80% 20%, rgba(200, 169, 81, 0.1) 0%, transparent 50%),
                 radial-gradient(circle at 40% 80%, rgba(232, 213, 245, 0.1) 0%, transparent 50%);
         }
-
-        .nav-link {
-            position: relative;
-        }
-
+        .nav-link { position: relative; }
         .nav-link::after {
             content: '';
             position: absolute;
@@ -154,12 +106,8 @@
             background: #F4A0A0;
             transition: width 0.3s;
         }
+        .nav-link:hover::after { width: 100%; }
 
-        .nav-link:hover::after {
-            width: 100%;
-        }
-
-        /* Modal styles */
         .modal {
             display: none;
             position: fixed;
@@ -171,14 +119,12 @@
             z-index: 1000;
             overflow-y: auto;
         }
-
         .modal.active {
             display: flex;
             align-items: center;
             justify-content: center;
             padding: 20px;
         }
-
         .modal-content {
             background: white;
             border-radius: 24px;
@@ -189,54 +135,21 @@
             animation: scaleIn 0.3s ease-out;
         }
 
-        /* Price range selector */
-        .price-option {
+        .price-option, .topping-option, .product-option {
             transition: all 0.3s;
             cursor: pointer;
         }
-
-        .price-option:hover {
-            transform: scale(1.05);
-        }
-
-        .price-option.selected {
+        .price-option:hover { transform: scale(1.02); }
+        .price-option.selected, .product-option.selected {
             background: linear-gradient(135deg, #F4A0A0, #E07070);
             color: white;
             border-color: #E07070;
         }
-
-        /* Topping / flavor option */
-        .topping-option {
-            transition: all 0.3s;
-            cursor: pointer;
-        }
-
-        .topping-option:hover {
-            border-color: #F4A0A0;
-        }
-
+        .topping-option:hover { border-color: #F4A0A0; }
         .topping-option.selected {
             background: #FDE8E8;
             border-color: #F4A0A0;
         }
-
-        /* Product type selector */
-        .product-option {
-            transition: all 0.3s;
-            cursor: pointer;
-        }
-
-        .product-option:hover {
-            border-color: #F4A0A0;
-        }
-
-        .product-option.selected {
-            background: linear-gradient(135deg, #F4A0A0, #E07070);
-            color: white;
-            border-color: #E07070;
-        }
-
-        /* Success page */
         .success-page {
             display: none;
             position: fixed;
@@ -248,10 +161,7 @@
             z-index: 2000;
             overflow-y: auto;
         }
-
-        .success-page.active {
-            display: block;
-        }
+        .success-page.active { display: block; }
     </style>
 </head>
 <body>
@@ -360,8 +270,8 @@
                     <div class="relative bg-gradient-to-br from-blush-light to-soft-pink rounded-3xl p-8 h-full overflow-hidden transition-all duration-500 hover:shadow-xl hover:scale-[1.03]">
                         <div class="absolute top-0 right-0 w-32 h-32 bg-white/20 rounded-full -translate-y-1/2 translate-x-1/2"></div>
                         <span class="text-5xl mb-4 block group-hover:scale-110 transition-transform duration-300">🎂</span>
-                        <h3 class="font-playfair text-xl font-semibold text-chocolate mb-2">Wedding Cakes</h3>
-                        <p class="text-warm-gray text-sm leading-relaxed">Stunning multi-tier creations that become the centerpiece of your celebration.</p>
+                        <h3 class="font-playfair text-xl font-semibold text-chocolate mb-2">Artisan Flavor Cakes</h3>
+                        <p class="text-warm-gray text-sm leading-relaxed">Infused with premium chocolates, rich vanillas, and real berry compotes.</p>
                     </div>
                 </div>
 
@@ -378,8 +288,8 @@
                     <div class="relative bg-gradient-to-br from-gold-light to-yellow-100 rounded-3xl p-8 h-full overflow-hidden transition-all duration-500 hover:shadow-xl hover:scale-[1.03]">
                         <div class="absolute top-0 right-0 w-32 h-32 bg-white/20 rounded-full -translate-y-1/2 translate-x-1/2"></div>
                         <span class="text-5xl mb-4 block group-hover:scale-110 transition-transform duration-300">🍰</span>
-                        <h3 class="font-playfair text-xl font-semibold text-chocolate mb-2">Celebration Cakes</h3>
-                        <p class="text-warm-gray text-sm leading-relaxed">Birthdays, anniversaries, and milestones deserve extraordinary cakes.</p>
+                        <h3 class="font-playfair text-xl font-semibold text-chocolate mb-2">Celebration Tiers</h3>
+                        <p class="text-warm-gray text-sm leading-relaxed">Multi-tiered custom flavor cakes designed for birthdays and milestones.</p>
                     </div>
                 </div>
             </div>
@@ -391,18 +301,19 @@
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-16">
                 <p class="font-dancing text-blush-dark text-xl mb-2">Our Signature Collection</p>
-                <h2 class="font-playfair text-4xl md:text-5xl font-bold text-chocolate mb-4">Handcrafted With Love</h2>
-                <p class="text-warm-gray max-w-2xl mx-auto text-lg">Each cake is a unique creation, made with the finest ingredients and decorated with artistic precision.</p>
+                <h2 class="font-playfair text-4xl md:text-5xl font-bold text-chocolate mb-4">Flavors Handcrafted With Love</h2>
+                <p class="text-warm-gray max-w-2xl mx-auto text-lg">Each cake is baked fresh with distinct flavors, silky fillings, and artistic decor.</p>
                 <div class="mt-6 w-24 h-1 bg-gradient-to-r from-blush to-gold mx-auto rounded-full"></div>
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Flavor 1: Chocolate Fudge -->
                 <div class="card-hover group">
                     <div class="bg-white rounded-3xl overflow-hidden shadow-md">
                         <div class="relative overflow-hidden aspect-square">
-                            <img src="cake-basic.png" alt="Basic plain cake" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
-                            <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-medium text-chocolate">Basic</div>
-                            <div class="absolute bottom-4 right-4 bg-chocolate/90 backdrop-blur-sm text-gold-light px-3 py-1.5 rounded-full text-xs font-medium">Rp 0 - 100k</div>
+                            <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=800&q=80" alt="Belgian Dark Chocolate Cake" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                            <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-medium text-chocolate">Chocolate</div>
+                            <div class="absolute bottom-4 right-4 bg-chocolate/90 backdrop-blur-sm text-gold-light px-3 py-1.5 rounded-full text-xs font-medium">Rp 95k - 150k</div>
                         </div>
                         <div class="p-6">
                             <div class="flex items-center gap-1 mb-2">
@@ -412,20 +323,21 @@
                                 <i class="fas fa-star text-gold text-sm"></i>
                                 <i class="fas fa-star text-gold text-sm"></i>
                             </div>
-                            <h3 class="font-playfair text-xl font-semibold text-chocolate mb-2">Basic Plain Cake</h3>
-                            <p class="text-warm-gray text-sm leading-relaxed mb-2">A small plain white cake — smooth white frosting, no filling, no toppings.</p>
-                            <p class="text-blush-dark font-bold mb-4">Rp 0 - Rp 100.000</p>
-                            <button onclick="openOrderModal()" class="w-full bg-soft-pink text-blush-dark py-3 rounded-full text-sm font-medium hover:bg-blush hover:text-white transition-all duration-300">Order Now</button>
+                            <h3 class="font-playfair text-xl font-semibold text-chocolate mb-2">Belgian Dark Chocolate</h3>
+                            <p class="text-warm-gray text-sm leading-relaxed mb-2">Rich dark chocolate sponge layered with smooth chocolate ganache.</p>
+                            <p class="text-blush-dark font-bold mb-4">Rp 95.000 - Rp 150.000</p>
+                            <button onclick="openOrderModal('cake', 'Chocolate')" class="w-full bg-soft-pink text-blush-dark py-3 rounded-full text-sm font-medium hover:bg-blush hover:text-white transition-all duration-300">Order Now</button>
                         </div>
                     </div>
                 </div>
 
+                <!-- Flavor 2: Strawberry Cream -->
                 <div class="card-hover group">
                     <div class="bg-white rounded-3xl overflow-hidden shadow-md">
                         <div class="relative overflow-hidden aspect-square">
-                            <img src="cake-standard.png" alt="Standard plain cake" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
-                            <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-medium text-chocolate">Standard</div>
-                            <div class="absolute bottom-4 right-4 bg-chocolate/90 backdrop-blur-sm text-gold-light px-3 py-1.5 rounded-full text-xs font-medium">Rp 100k - 200k</div>
+                            <img src="https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?w=800&q=80" alt="Strawberry Blossom Cake" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                            <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-medium text-chocolate">Strawberry</div>
+                            <div class="absolute bottom-4 right-4 bg-chocolate/90 backdrop-blur-sm text-gold-light px-3 py-1.5 rounded-full text-xs font-medium">Rp 150k - 230k</div>
                         </div>
                         <div class="p-6">
                             <div class="flex items-center gap-1 mb-2">
@@ -435,19 +347,20 @@
                                 <i class="fas fa-star text-gold text-sm"></i>
                                 <i class="fas fa-star text-gold text-sm"></i>
                             </div>
-                            <h3 class="font-playfair text-xl font-semibold text-chocolate mb-2">Standard Plain Cake</h3>
-                            <p class="text-warm-gray text-sm leading-relaxed mb-2">A generous plain white cake — no filling, no toppings, just clean white frosting.</p>
-                            <p class="text-blush-dark font-bold mb-4">Rp 100.000 - Rp 200.000</p>
-                            <button onclick="openOrderModal()" class="w-full bg-soft-pink text-blush-dark py-3 rounded-full text-sm font-medium hover:bg-blush hover:text-white transition-all duration-300">Order Now</button>
+                            <h3 class="font-playfair text-xl font-semibold text-chocolate mb-2">Strawberry Blossom</h3>
+                            <p class="text-warm-gray text-sm leading-relaxed mb-2">Fluffy sponge filled with homemade strawberry compote and whipped chantilly cream.</p>
+                            <p class="text-blush-dark font-bold mb-4">Rp 150.000 - Rp 230.000</p>
+                            <button onclick="openOrderModal('cake', 'Strawberry')" class="w-full bg-soft-pink text-blush-dark py-3 rounded-full text-sm font-medium hover:bg-blush hover:text-white transition-all duration-300">Order Now</button>
                         </div>
                     </div>
                 </div>
 
+                <!-- Flavor 3: Red Velvet -->
                 <div class="card-hover group">
                     <div class="bg-white rounded-3xl overflow-hidden shadow-md">
                         <div class="relative overflow-hidden aspect-square">
-                            <img src="cake-premium.png" alt="Premium plain cake" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
-                            <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-medium text-chocolate">Premium</div>
+                            <img src="https://images.unsplash.com/photo-1586788680434-30d324b2d46f?w=800&q=80" alt="Signature Red Velvet Cake" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                            <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-medium text-chocolate">Red Velvet</div>
                             <div class="absolute bottom-4 right-4 bg-chocolate/90 backdrop-blur-sm text-gold-light px-3 py-1.5 rounded-full text-xs font-medium">Rp 200k - 300k</div>
                         </div>
                         <div class="p-6">
@@ -458,20 +371,21 @@
                                 <i class="fas fa-star text-gold text-sm"></i>
                                 <i class="fas fa-star text-gold text-sm"></i>
                             </div>
-                            <h3 class="font-playfair text-xl font-semibold text-chocolate mb-2">Premium Plain Cake</h3>
-                            <p class="text-warm-gray text-sm leading-relaxed mb-2">An elegant two-tier plain white cake — no filling, smooth white frosting throughout.</p>
+                            <h3 class="font-playfair text-xl font-semibold text-chocolate mb-2">Signature Red Velvet</h3>
+                            <p class="text-warm-gray text-sm leading-relaxed mb-2">Classic cocoa-infused red velvet crumb with whipped cream cheese frosting.</p>
                             <p class="text-blush-dark font-bold mb-4">Rp 200.000 - Rp 300.000</p>
-                            <button onclick="openOrderModal()" class="w-full bg-soft-pink text-blush-dark py-3 rounded-full text-sm font-medium hover:bg-blush hover:text-white transition-all duration-300">Order Now</button>
+                            <button onclick="openOrderModal('cake', 'Red Velvet')" class="w-full bg-soft-pink text-blush-dark py-3 rounded-full text-sm font-medium hover:bg-blush hover:text-white transition-all duration-300">Order Now</button>
                         </div>
                     </div>
                 </div>
 
+                <!-- Flavor 4: Matcha Fusion -->
                 <div class="card-hover group">
                     <div class="bg-white rounded-3xl overflow-hidden shadow-md">
                         <div class="relative overflow-hidden aspect-square">
-                            <img src="cake-deluxe.png" alt="Deluxe plain cake" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
-                            <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-medium text-chocolate">Deluxe</div>
-                            <div class="absolute bottom-4 right-4 bg-chocolate/90 backdrop-blur-sm text-gold-light px-3 py-1.5 rounded-full text-xs font-medium">Rp 300k - 400k</div>
+                            <img src="https://images.unsplash.com/photo-1535141192574-5d4897c13136?w=800&q=80" alt="Matcha White Chocolate Cake" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                            <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-medium text-chocolate">Matcha</div>
+                            <div class="absolute bottom-4 right-4 bg-chocolate/90 backdrop-blur-sm text-gold-light px-3 py-1.5 rounded-full text-xs font-medium">Rp 250k - 380k</div>
                         </div>
                         <div class="p-6">
                             <div class="flex items-center gap-1 mb-2">
@@ -481,20 +395,21 @@
                                 <i class="fas fa-star text-gold text-sm"></i>
                                 <i class="fas fa-star text-gold text-sm"></i>
                             </div>
-                            <h3 class="font-playfair text-xl font-semibold text-chocolate mb-2">Deluxe Plain Cake</h3>
-                            <p class="text-warm-gray text-sm leading-relaxed mb-2">A tall three-tier plain white cake — no filling, a clean polished white finish.</p>
-                            <p class="text-blush-dark font-bold mb-4">Rp 300.000 - Rp 400.000</p>
-                            <button onclick="openOrderModal()" class="w-full bg-soft-pink text-blush-dark py-3 rounded-full text-sm font-medium hover:bg-blush hover:text-white transition-all duration-300">Order Now</button>
+                            <h3 class="font-playfair text-xl font-semibold text-chocolate mb-2">Kyoto Matcha Fusion</h3>
+                            <p class="text-warm-gray text-sm leading-relaxed mb-2">Ceremonial Uji matcha cake coupled with silky white chocolate mousse.</p>
+                            <p class="text-blush-dark font-bold mb-4">Rp 250.000 - Rp 380.000</p>
+                            <button onclick="openOrderModal('cake', 'Matcha')" class="w-full bg-soft-pink text-blush-dark py-3 rounded-full text-sm font-medium hover:bg-blush hover:text-white transition-all duration-300">Order Now</button>
                         </div>
                     </div>
                 </div>
 
+                <!-- Flavor 5: Madagascar Vanilla Berry -->
                 <div class="card-hover group">
                     <div class="bg-white rounded-3xl overflow-hidden shadow-md">
                         <div class="relative overflow-hidden aspect-square">
-                            <img src="cake-luxury.png" alt="Luxury plain cake" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
-                            <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-medium text-chocolate">Luxury</div>
-                            <div class="absolute bottom-4 right-4 bg-chocolate/90 backdrop-blur-sm text-gold-light px-3 py-1.5 rounded-full text-xs font-medium">Rp 400k - 500k</div>
+                            <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=800&q=80" alt="Madagascar Vanilla Cake" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                            <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-medium text-chocolate">Vanilla</div>
+                            <div class="absolute bottom-4 right-4 bg-chocolate/90 backdrop-blur-sm text-gold-light px-3 py-1.5 rounded-full text-xs font-medium">Rp 300k - 450k</div>
                         </div>
                         <div class="p-6">
                             <div class="flex items-center gap-1 mb-2">
@@ -504,18 +419,19 @@
                                 <i class="fas fa-star text-gold text-sm"></i>
                                 <i class="fas fa-star text-gold text-sm"></i>
                             </div>
-                            <h3 class="font-playfair text-xl font-semibold text-chocolate mb-2">Luxury Plain Cake</h3>
-                            <p class="text-warm-gray text-sm leading-relaxed mb-2">Our finest plain white cake — grand four tiers, no filling, pure white from top to base.</p>
-                            <p class="text-blush-dark font-bold mb-4">Rp 400.000 - Rp 500.000</p>
-                            <button onclick="openOrderModal()" class="w-full bg-soft-pink text-blush-dark py-3 rounded-full text-sm font-medium hover:bg-blush hover:text-white transition-all duration-300">Order Now</button>
+                            <h3 class="font-playfair text-xl font-semibold text-chocolate mb-2">Madagascar Vanilla Berry</h3>
+                            <p class="text-warm-gray text-sm leading-relaxed mb-2">Pure bean vanilla bean sponge topped with wild blackberries and gold dust.</p>
+                            <p class="text-blush-dark font-bold mb-4">Rp 300.000 - Rp 450.000</p>
+                            <button onclick="openOrderModal('cake', 'Vanilla')" class="w-full bg-soft-pink text-blush-dark py-3 rounded-full text-sm font-medium hover:bg-blush hover:text-white transition-all duration-300">Order Now</button>
                         </div>
                     </div>
                 </div>
 
+                <!-- Cupcake 1 -->
                 <div class="card-hover group">
                     <div class="bg-white rounded-3xl overflow-hidden shadow-md">
                         <div class="relative overflow-hidden aspect-square">
-                            <img src="cupcake-basic.png" alt="Classic vanilla cupcake" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                            <img src="https://images.unsplash.com/photo-1576618148400-f54bed99fcfd?w=800&q=80" alt="Classic vanilla cupcake" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
                             <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-medium text-chocolate">Cupcake</div>
                             <div class="absolute bottom-4 right-4 bg-chocolate/90 backdrop-blur-sm text-gold-light px-3 py-1.5 rounded-full text-xs font-medium">Rp 0 - 50k</div>
                         </div>
@@ -528,17 +444,18 @@
                                 <i class="fas fa-star text-gold text-sm"></i>
                             </div>
                             <h3 class="font-playfair text-xl font-semibold text-chocolate mb-2">Classic Vanilla Cupcake</h3>
-                            <p class="text-warm-gray text-sm leading-relaxed mb-2">A single fluffy vanilla cupcake with a smooth swirl of white buttercream.</p>
+                            <p class="text-warm-gray text-sm leading-relaxed mb-2">Fluffy vanilla cupcake topped with vanilla buttercream swirls.</p>
                             <p class="text-blush-dark font-bold mb-4">Rp 15.000 - Rp 25.000</p>
                             <button onclick="openOrderModal('cupcake')" class="w-full bg-soft-pink text-blush-dark py-3 rounded-full text-sm font-medium hover:bg-blush hover:text-white transition-all duration-300">Order Now</button>
                         </div>
                     </div>
                 </div>
 
+                <!-- Cupcake 2 -->
                 <div class="card-hover group">
                     <div class="bg-white rounded-3xl overflow-hidden shadow-md">
                         <div class="relative overflow-hidden aspect-square">
-                            <img src="cupcake-box.png" alt="Cupcake box of six" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                            <img src="https://images.unsplash.com/photo-1587668178277-295251f900ce?w=800&q=80" alt="Cupcake box of six" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
                             <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-medium text-chocolate">Cupcake</div>
                             <div class="absolute bottom-4 right-4 bg-chocolate/90 backdrop-blur-sm text-gold-light px-3 py-1.5 rounded-full text-xs font-medium">Rp 50k - 100k</div>
                         </div>
@@ -551,17 +468,18 @@
                                 <i class="fas fa-star text-gold text-sm"></i>
                             </div>
                             <h3 class="font-playfair text-xl font-semibold text-chocolate mb-2">Pastel Cupcake Box</h3>
-                            <p class="text-warm-gray text-sm leading-relaxed mb-2">A box of six assorted cupcakes with pastel buttercream swirls, gift-ready.</p>
+                            <p class="text-warm-gray text-sm leading-relaxed mb-2">Box of six assorted cupcakes with multi-flavor fillings and pastel swirl.</p>
                             <p class="text-blush-dark font-bold mb-4">Rp 75.000 - Rp 100.000</p>
                             <button onclick="openOrderModal('cupcake')" class="w-full bg-soft-pink text-blush-dark py-3 rounded-full text-sm font-medium hover:bg-blush hover:text-white transition-all duration-300">Order Now</button>
                         </div>
                     </div>
                 </div>
 
+                <!-- Cupcake 3 -->
                 <div class="card-hover group">
                     <div class="bg-white rounded-3xl overflow-hidden shadow-md">
                         <div class="relative overflow-hidden aspect-square">
-                            <img src="cupcake-premium.png" alt="Premium cupcake tower" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                            <img src="https://images.unsplash.com/photo-1614707267537-b85aaf00c4b7?w=800&q=80" alt="Premium cupcake tower" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
                             <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-medium text-chocolate">Cupcake</div>
                             <div class="absolute bottom-4 right-4 bg-chocolate/90 backdrop-blur-sm text-gold-light px-3 py-1.5 rounded-full text-xs font-medium">Rp 100k - 250k</div>
                         </div>
@@ -574,7 +492,7 @@
                                 <i class="fas fa-star text-gold text-sm"></i>
                             </div>
                             <h3 class="font-playfair text-xl font-semibold text-chocolate mb-2">Gourmet Cupcake Tower</h3>
-                            <p class="text-warm-gray text-sm leading-relaxed mb-2">A dozen gourmet cupcakes on a cake stand — berries, gold sprinkles &amp; all.</p>
+                            <p class="text-warm-gray text-sm leading-relaxed mb-2">A dozen gourmet cupcakes with fresh berries, gold sprinkles, and macarons.</p>
                             <p class="text-blush-dark font-bold mb-4">Rp 150.000 - Rp 250.000</p>
                             <button onclick="openOrderModal('cupcake')" class="w-full bg-soft-pink text-blush-dark py-3 rounded-full text-sm font-medium hover:bg-blush hover:text-white transition-all duration-300">Order Now</button>
                         </div>
@@ -606,7 +524,7 @@
                     <p class="font-dancing text-blush-dark text-xl mb-2">Our Story</p>
                     <h2 class="font-playfair text-4xl md:text-5xl font-bold text-chocolate mb-6">Baking Happiness Since 2016</h2>
                     <p class="text-warm-gray text-lg leading-relaxed mb-6">What started as a small kitchen experiment has blossomed into the city's most beloved artisan bakery. Our founder, Chef Isabella, believed that every celebration deserves a cake that's as unique as the moment itself.</p>
-                    <p class="text-warm-gray text-lg leading-relaxed mb-10">Today, our team of passionate bakers continues that tradition, combining time-honored techniques with creative innovation to craft cakes that don't just taste incredible — they tell your story.</p>
+                    <p class="text-warm-gray text-lg leading-relaxed mb-10">Today, our team of passionate bakers continues that tradition, combining time-honored techniques with creative flavor innovations to craft cakes that don't just taste incredible — they tell your story.</p>
 
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                         <div class="flex gap-4 items-start">
@@ -691,7 +609,7 @@
 
                         <div class="mb-6">
                             <label class="block text-sm font-medium text-chocolate mb-2">Tell Us About Your Dream Cake</label>
-                            <textarea rows="4" placeholder="Describe your ideal cake..." class="w-full px-4 py-3 rounded-xl border border-cream-dark bg-cream/50 focus:outline-none focus:border-blush focus:ring-2 focus:ring-blush/20 transition-all duration-300 resize-none"></textarea>
+                            <textarea rows="4" placeholder="Describe your preferred flavor, design, or occasion..." class="w-full px-4 py-3 rounded-xl border border-cream-dark bg-cream/50 focus:outline-none focus:border-blush focus:ring-2 focus:ring-blush/20 transition-all duration-300 resize-none"></textarea>
                         </div>
 
                         <button type="submit" class="w-full flex items-center justify-center gap-2 bg-chocolate text-cream py-4 rounded-xl font-medium text-lg hover:bg-chocolate-light transition-all duration-300 hover:scale-[1.02] hover:shadow-lg">
@@ -730,18 +648,18 @@
                 </div>
 
                 <div>
-                    <h4 class="font-playfair text-cream font-semibold mb-4">Our Services</h4>
+                    <h4 class="font-playfair text-cream font-semibold mb-4">Our Flavors</h4>
                     <ul class="space-y-2">
-                        <li><a href="#" class="text-cream/60 hover:text-blush-light transition-colors duration-300 text-sm">Wedding Cakes</a></li>
-                        <li><a href="#" class="text-cream/60 hover:text-blush-light transition-colors duration-300 text-sm">Birthday Cakes</a></li>
-                        <li><a href="#" class="text-cream/60 hover:text-blush-light transition-colors duration-300 text-sm">Custom Designs</a></li>
-                        <li><a href="#" class="text-cream/60 hover:text-blush-light transition-colors duration-300 text-sm">Corporate Events</a></li>
+                        <li><a href="#cakes" class="text-cream/60 hover:text-blush-light transition-colors duration-300 text-sm">Belgian Chocolate</a></li>
+                        <li><a href="#cakes" class="text-cream/60 hover:text-blush-light transition-colors duration-300 text-sm">Strawberry Blossom</a></li>
+                        <li><a href="#cakes" class="text-cream/60 hover:text-blush-light transition-colors duration-300 text-sm">Red Velvet</a></li>
+                        <li><a href="#cakes" class="text-cream/60 hover:text-blush-light transition-colors duration-300 text-sm">Kyoto Matcha</a></li>
                     </ul>
                 </div>
 
                 <div>
                     <h4 class="font-playfair text-cream font-semibold mb-4">Stay Sweet</h4>
-                    <p class="text-cream/60 text-sm mb-4">Subscribe for exclusive offers and sweet inspiration.</p>
+                    <p class="text-cream/60 text-sm mb-4">Subscribe for exclusive flavor releases and seasonal offers.</p>
                     <div class="flex gap-2">
                         <input type="email" placeholder="Your email" class="flex-1 px-4 py-2.5 rounded-lg bg-cream/10 border border-cream/20 text-cream placeholder:text-cream/40 text-sm focus:outline-none focus:border-blush">
                         <button class="px-4 py-2.5 bg-blush text-cream rounded-lg text-sm font-medium hover:bg-blush-dark transition-colors">Join</button>
@@ -808,17 +726,17 @@
                         <label class="topping-option border-2 border-cream-dark rounded-xl p-4 text-center">
                             <input type="radio" name="flavor" value="Chocolate" required class="hidden">
                             <span class="text-2xl mb-1 block">🍫</span>
-                            <span class="text-sm font-medium">Chocolate</span>
+                            <span class="text-sm font-medium">Dark Chocolate</span>
                         </label>
                         <label class="topping-option border-2 border-cream-dark rounded-xl p-4 text-center">
                             <input type="radio" name="flavor" value="Vanilla" class="hidden">
                             <span class="text-2xl mb-1 block">🍦</span>
-                            <span class="text-sm font-medium">Vanilla</span>
+                            <span class="text-sm font-medium">Madagascar Vanilla</span>
                         </label>
                         <label class="topping-option border-2 border-cream-dark rounded-xl p-4 text-center">
                             <input type="radio" name="flavor" value="Strawberry" class="hidden">
                             <span class="text-2xl mb-1 block">🍓</span>
-                            <span class="text-sm font-medium">Strawberry</span>
+                            <span class="text-sm font-medium">Strawberry Cream</span>
                         </label>
                         <label class="topping-option border-2 border-cream-dark rounded-xl p-4 text-center">
                             <input type="radio" name="flavor" value="Red Velvet" class="hidden">
@@ -828,12 +746,12 @@
                         <label class="topping-option border-2 border-cream-dark rounded-xl p-4 text-center">
                             <input type="radio" name="flavor" value="Matcha" class="hidden">
                             <span class="text-2xl mb-1 block">🍵</span>
-                            <span class="text-sm font-medium">Matcha</span>
+                            <span class="text-sm font-medium">Matcha Fusion</span>
                         </label>
                         <label class="topping-option border-2 border-cream-dark rounded-xl p-4 text-center">
                             <input type="radio" name="flavor" value="Cheese" class="hidden">
                             <span class="text-2xl mb-1 block">🧀</span>
-                            <span class="text-sm font-medium">Cheese</span>
+                            <span class="text-sm font-medium">Rich Cheesecake</span>
                         </label>
                     </div>
                 </div>
@@ -855,7 +773,7 @@
                         <label class="topping-option border-2 border-cream-dark rounded-xl p-3 text-center cursor-pointer">
                             <input type="checkbox" name="toppings" value="Fresh Fruits" class="hidden">
                             <span class="text-xl mb-1 block">🍓</span>
-                            <span class="text-xs font-medium">Fresh Fruits</span>
+                            <span class="text-xs font-medium">Fresh Berries</span>
                         </label>
                         <label class="topping-option border-2 border-cream-dark rounded-xl p-3 text-center cursor-pointer">
                             <input type="checkbox" name="toppings" value="Edible Flowers" class="hidden">
@@ -877,20 +795,20 @@
 
                 <!-- Price Range -->
                 <div class="mb-8">
-                    <label class="block text-sm font-medium text-chocolate mb-3">Budget Range *</label>
+                    <label class="block text-sm font-medium text-chocolate mb-3">Size &amp; Flavor Tier *</label>
                     <div id="priceRangeList" class="space-y-3"></div>
 
                     <!-- Product preview matching selected budget -->
                     <div id="cakePreviewWrap" class="mt-4 hidden">
-                        <p class="text-xs text-warm-gray mb-2">Preview — <span id="previewCaption">plain</span></p>
-                        <img id="cakePreviewImg" src="" alt="Product preview" class="w-full aspect-square object-cover rounded-xl border border-cream-dark scale-in">
+                        <p class="text-xs text-warm-gray mb-2">Flavor Preview</p>
+                        <img id="cakePreviewImg" src="" alt="Product preview" class="w-full h-48 object-cover rounded-xl border border-cream-dark scale-in">
                     </div>
                 </div>
 
                 <!-- Special Request -->
                 <div class="mb-8">
                     <label class="block text-sm font-medium text-chocolate mb-2">Special Request (Optional)</label>
-                    <textarea id="specialRequest" rows="3" class="w-full px-4 py-3 rounded-xl border border-cream-dark bg-cream/50 focus:outline-none focus:border-blush focus:ring-2 focus:ring-blush/20 transition-all duration-300 resize-none" placeholder="Any special instructions..."></textarea>
+                    <textarea id="specialRequest" rows="3" class="w-full px-4 py-3 rounded-xl border border-cream-dark bg-cream/50 focus:outline-none focus:border-blush focus:ring-2 focus:ring-blush/20 transition-all duration-300 resize-none" placeholder="Allergies, custom inscription, or styling notes..."></textarea>
                 </div>
 
                 <!-- Submit Button -->
@@ -979,61 +897,27 @@
             menu.classList.toggle('hidden');
         });
 
-        // Close mobile menu on link click
         document.querySelectorAll('#mobileMenu a').forEach(link => {
             link.addEventListener('click', () => {
                 document.getElementById('mobileMenu').classList.add('hidden');
             });
         });
 
-        // Budget tiers per product type (values in thousands of Rupiah)
+        // Dynamic Flavor & Budget tiers
         const PRICE_TIERS = {
             cake: [
-                { value: '0-100', label: 'Rp 0 - Rp 100.000', tier: 'Basic', img: 'cake-basic.png' },
-                { value: '100-200', label: 'Rp 100.000 - Rp 200.000', tier: 'Standard', img: 'cake-standard.png' },
-                { value: '200-300', label: 'Rp 200.000 - Rp 300.000', tier: 'Premium', img: 'cake-premium.png' },
-                { value: '300-400', label: 'Rp 300.000 - Rp 400.000', tier: 'Deluxe', img: 'cake-deluxe.png' },
-                { value: '400-500', label: 'Rp 400.000 - Rp 500.000', tier: 'Luxury', img: 'cake-luxury.png' },
+                { value: '95-150', label: 'Rp 95.000 - Rp 150.000', tier: 'Belgian Chocolate (Small)', img: 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=600&q=80' },
+                { value: '150-230', label: 'Rp 150.000 - Rp 230.000', tier: 'Strawberry Blossom (Medium)', img: 'https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?w=600&q=80' },
+                { value: '200-300', label: 'Rp 200.000 - Rp 300.000', tier: 'Signature Red Velvet (Standard)', img: 'https://images.unsplash.com/photo-1586788680434-30d324b2d46f?w=600&q=80' },
+                { value: '250-380', label: 'Rp 250.000 - Rp 380.000', tier: 'Kyoto Matcha Fusion (Large)', img: 'https://images.unsplash.com/photo-1535141192574-5d4897c13136?w=600&q=80' },
+                { value: '300-450', label: 'Rp 300.000 - Rp 450.000', tier: 'Vanilla Berry Celebration (2-Tier)', img: 'https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=600&q=80' },
             ],
             cupcake: [
-                { value: '0-50', label: 'Rp 0 - Rp 50.000', tier: 'Single / Pair', img: 'cupcake-basic.png' },
-                { value: '50-100', label: 'Rp 50.000 - Rp 100.000', tier: 'Box of 6', img: 'cupcake-box.png' },
-                { value: '100-250', label: 'Rp 100.000 - Rp 250.000', tier: 'Gourmet Dozen', img: 'cupcake-premium.png' },
+                { value: '15-25', label: 'Rp 15.000 - Rp 25.000', tier: 'Single Cupcake', img: 'https://images.unsplash.com/photo-1576618148400-f54bed99fcfd?w=600&q=80' },
+                { value: '75-100', label: 'Rp 75.000 - Rp 100.000', tier: 'Box of 6 Pastel Flavors', img: 'https://images.unsplash.com/photo-1587668178277-295251f900ce?w=600&q=80' },
+                { value: '150-250', label: 'Rp 150.000 - Rp 250.000', tier: 'Gourmet Dozen Assorted', img: 'https://images.unsplash.com/photo-1614707267537-b85aaf00c4b7?w=600&q=80' },
             ]
         };
-
-        const FLAVOR_IMAGES = {
-            'Chocolate': 'flavor-chocolate.png',
-            'Vanilla': 'flavor-vanilla.png',
-            'Strawberry': 'flavor-strawberry.png',
-            'Red Velvet': 'flavor-redvelvet.png',
-            'Matcha': 'flavor-matcha.png',
-            'Cheese': 'flavor-cheese.png',
-        };
-        const previewState = { flavor: null, tierLabel: null, tierImg: null, product: 'cake' };
-
-        function updatePreview() {
-            const wrap = document.getElementById('cakePreviewWrap');
-            const img = document.getElementById('cakePreviewImg');
-            const caption = document.getElementById('previewCaption');
-            const isCupcake = previewState.product === 'cupcake';
-
-            // Flavor photos are whole cakes, so only swap the image for them when
-            // ordering a cake. For cupcakes keep the chosen cupcake tier photo and
-            // just reflect the flavor in the caption.
-            const flavorImg = (!isCupcake && previewState.flavor) ? FLAVOR_IMAGES[previewState.flavor] : null;
-            const src = flavorImg || previewState.tierImg;
-
-            if (!src) {
-                wrap.classList.add('hidden');
-                return;
-            }
-
-            img.src = src;
-            const flavorLabel = previewState.flavor || 'Plain';
-            caption.textContent = flavorLabel + (previewState.tierLabel ? ' · ' + previewState.tierLabel : '');
-            wrap.classList.remove('hidden');
-        }
 
         function renderPriceOptions(productType) {
             const list = document.getElementById('priceRangeList');
@@ -1045,24 +929,29 @@
                     <span class="text-sm text-warm-gray">${t.tier}</span>
                 </label>
             `).join('');
-            previewState.tierLabel = null;
-            previewState.tierImg = null;
             document.getElementById('cakePreviewWrap').classList.add('hidden');
             document.getElementById('cakePreviewImg').src = '';
         }
 
         // Order Modal Functions
-        function openOrderModal(productType) {
+        function openOrderModal(productType = 'cake', flavor = null) {
             renderPriceOptions(productType === 'cupcake' ? 'cupcake' : 'cake');
-            if (productType === 'cupcake') {
-                const cupcakeRadio = document.querySelector('input[name="productType"][value="Cupcake"]');
-                cupcakeRadio.checked = true;
-                cupcakeRadio.dispatchEvent(new Event('change', { bubbles: true }));
-            } else {
-                const cakeRadio = document.querySelector('input[name="productType"][value="Cake"]');
-                cakeRadio.checked = true;
-                cakeRadio.dispatchEvent(new Event('change', { bubbles: true }));
+            
+            const targetType = productType === 'cupcake' ? 'Cupcake' : 'Cake';
+            const typeRadio = document.querySelector(`input[name="productType"][value="${targetType}"]`);
+            if (typeRadio) {
+                typeRadio.checked = true;
+                typeRadio.dispatchEvent(new Event('change', { bubbles: true }));
             }
+
+            if (flavor) {
+                const flavorRadio = document.querySelector(`input[name="flavor"][value="${flavor}"]`);
+                if (flavorRadio) {
+                    flavorRadio.checked = true;
+                    flavorRadio.dispatchEvent(new Event('change', { bubbles: true }));
+                }
+            }
+
             document.getElementById('orderModal').classList.add('active');
             document.body.style.overflow = 'hidden';
         }
@@ -1071,28 +960,18 @@
             document.getElementById('orderModal').classList.remove('active');
             document.body.style.overflow = 'auto';
             document.getElementById('orderForm').reset();
-            // Reset selections
-            document.querySelectorAll('.price-option').forEach(el => el.classList.remove('selected'));
-            document.querySelectorAll('.topping-option, .product-option').forEach(el => el.classList.remove('selected'));
-            previewState.flavor = null;
-            previewState.tierLabel = null;
-            previewState.tierImg = null;
-            previewState.product = 'cake';
+            document.querySelectorAll('.price-option, .topping-option, .product-option').forEach(el => el.classList.remove('selected'));
             document.getElementById('cakePreviewWrap').classList.add('hidden');
         }
 
-        // Product type selection — swap budget tiers when cake/cupcake changes
+        // Product type switcher
         document.querySelectorAll('input[name="productType"]').forEach(radio => {
             radio.addEventListener('change', function() {
-                previewState.product = this.value === 'Cupcake' ? 'cupcake' : 'cake';
-                renderPriceOptions(previewState.product);
-                updatePreview();
+                renderPriceOptions(this.value === 'Cupcake' ? 'cupcake' : 'cake');
             });
         });
 
-        // Price range + topping/flavor/product selection (event delegation).
-        // Using 'change' events avoids the double-toggle bug that broke the
-        // old click handlers (native label activation fired the click twice).
+        // Form event listener for UI selections
         document.getElementById('orderForm').addEventListener('change', function(e) {
             const input = e.target;
 
@@ -1100,17 +979,20 @@
                 document.querySelectorAll('.price-option').forEach(el => el.classList.remove('selected'));
                 const option = input.closest('.price-option');
                 option.classList.add('selected');
-                previewState.tierImg = option.getAttribute('data-cake-img');
-                previewState.tierLabel = option.querySelector('span:last-child').textContent.trim();
-                updatePreview();
+
+                const imgUrl = option.getAttribute('data-cake-img');
+                const wrap = document.getElementById('cakePreviewWrap');
+                const img = document.getElementById('cakePreviewImg');
+                if (imgUrl && wrap && img) {
+                    img.src = imgUrl;
+                    wrap.classList.remove('hidden');
+                }
             } else if (input.matches('input[name="toppings"]')) {
                 input.closest('.topping-option').classList.toggle('selected', input.checked);
             } else if (input.matches('input[name="flavor"]')) {
                 document.querySelectorAll('input[name="flavor"]').forEach(r => {
                     r.closest('.topping-option').classList.toggle('selected', r.checked);
                 });
-                previewState.flavor = input.checked ? input.value : null;
-                updatePreview();
             } else if (input.matches('input[name="productType"]')) {
                 document.querySelectorAll('input[name="productType"]').forEach(r => {
                     r.closest('.product-option').classList.toggle('selected', r.checked);
@@ -1122,23 +1004,16 @@
         function submitOrder(event) {
             event.preventDefault();
 
-            // Get form data
             const name = document.getElementById('customerName').value;
-            const phone = document.getElementById('customerPhone').value;
             const productType = document.querySelector('input[name="productType"]:checked').value;
             const flavor = document.querySelector('input[name="flavor"]:checked').value;
             const toppings = Array.from(document.querySelectorAll('input[name="toppings"]:checked')).map(cb => cb.value);
             const priceRange = document.querySelector('input[name="priceRange"]:checked').value;
-            const specialRequest = document.getElementById('specialRequest').value;
 
-            // Generate order number
             const orderNum = 'SB-' + Math.floor(100000 + Math.random() * 900000);
-
-            // Calculate total (midpoint of range)
             const [min, max] = priceRange.split('-').map(Number);
             const total = ((min + max) / 2) * 1000;
 
-            // Update success page
             document.getElementById('orderNumber').textContent = 'Order #' + orderNum;
             document.getElementById('summaryName').textContent = name;
             document.getElementById('summaryProduct').textContent = productType;
@@ -1147,34 +1022,16 @@
             document.getElementById('summaryPrice').textContent = 'Rp ' + (min * 1000).toLocaleString('id-ID') + ' - Rp ' + (max * 1000).toLocaleString('id-ID');
             document.getElementById('summaryTotal').textContent = 'Rp ' + total.toLocaleString('id-ID');
 
-            // Close modal and show success
             closeOrderModal();
             document.getElementById('successPage').classList.add('active');
             document.body.style.overflow = 'hidden';
 
-            // Confetti celebration!
             confetti({
                 particleCount: 150,
                 spread: 70,
                 origin: { y: 0.6 },
                 colors: ['#F4A0A0', '#C8A951', '#E8D5F5', '#FDDCDC']
             });
-
-            // Second burst
-            setTimeout(() => {
-                confetti({
-                    particleCount: 100,
-                    angle: 60,
-                    spread: 55,
-                    origin: { x: 0 }
-                });
-                confetti({
-                    particleCount: 100,
-                    angle: 120,
-                    spread: 55,
-                    origin: { x: 1 }
-                });
-            }, 250);
         }
 
         function closeSuccessPage() {
@@ -1183,11 +1040,8 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        // Close modal on outside click
         document.getElementById('orderModal').addEventListener('click', function(e) {
-            if (e.target === this) {
-                closeOrderModal();
-            }
+            if (e.target === this) closeOrderModal();
         });
     </script>
 </body>
